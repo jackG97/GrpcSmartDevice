@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package smartdevice;
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.jackgallaher.smartlaptop";
+option java_outer_classname = "SmartDeviceLaptopImpl";
+
+service smartLaptop {
+	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
+
+}
+
+message PowerStatus{
+    bool status = 1;
+}

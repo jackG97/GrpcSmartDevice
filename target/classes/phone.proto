@@ -5,7 +5,6 @@ package smartdevice;
 import "google/protobuf/empty.proto";
 
 
-
 option java_multiple_files = true;
 option java_package = "com.jackgallaher.smartdevice";
 option java_outer_classname = "SmartDeviceImpl";
@@ -13,8 +12,23 @@ option java_outer_classname = "SmartDeviceImpl";
 service smartPhone {
 	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
     rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc findContacts(google.protobuf.Empty) returns (stream Contacts) {}
+    rpc addContact(Contacts) returns (Response) {}
 }
 
 message PowerStatus{
     bool status = 1;
 }
+
+
+message Contacts{
+	string name = 1;
+	string number = 2;
+	string network = 3;
+}
+
+message Response{
+	string text = 1;
+}
+
+
