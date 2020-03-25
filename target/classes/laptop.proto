@@ -11,9 +11,12 @@ option java_outer_classname = "SmartDeviceLaptopImpl";
 service smartLaptop {
 	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
     rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc startCharging(google.protobuf.Empty) returns (stream PowerStatus) {}
 
 }
 
 message PowerStatus{
     bool status = 1;
+    string statusMsg = 2;
+  	int32 batterylife = 3;
 }

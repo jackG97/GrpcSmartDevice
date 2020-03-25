@@ -29,13 +29,16 @@ public final class SmartDeviceLaptopImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\014laptop.proto\022\013smartdevice\032\033google/prot" +
-      "obuf/empty.proto\"\035\n\013PowerStatus\022\016\n\006statu" +
-      "s\030\001 \001(\0102\216\001\n\013smartLaptop\022>\n\010switchOn\022\026.go" +
+      "obuf/empty.proto\"E\n\013PowerStatus\022\016\n\006statu" +
+      "s\030\001 \001(\010\022\021\n\tstatusMsg\030\002 \001(\t\022\023\n\013batterylif" +
+      "e\030\003 \001(\0052\325\001\n\013smartLaptop\022>\n\010switchOn\022\026.go" +
       "ogle.protobuf.Empty\032\030.smartdevice.PowerS" +
       "tatus\"\000\022?\n\tswitchOff\022\026.google.protobuf.E" +
-      "mpty\032\030.smartdevice.PowerStatus\"\000B7\n\034com." +
-      "jackgallaher.smartlaptopB\025SmartDeviceLap" +
-      "topImplP\001b\006proto3"
+      "mpty\032\030.smartdevice.PowerStatus\"\000\022E\n\rstar" +
+      "tCharging\022\026.google.protobuf.Empty\032\030.smar" +
+      "tdevice.PowerStatus\"\0000\001B7\n\034com.jackgalla" +
+      "her.smartlaptopB\025SmartDeviceLaptopImplP\001" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -55,7 +58,7 @@ public final class SmartDeviceLaptopImpl {
     internal_static_smartdevice_PowerStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_smartdevice_PowerStatus_descriptor,
-        new java.lang.String[] { "Status", });
+        new java.lang.String[] { "Status", "StatusMsg", "Batterylife", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

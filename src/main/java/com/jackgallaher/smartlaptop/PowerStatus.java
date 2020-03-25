@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private PowerStatus() {
     status_ = false;
+    statusMsg_ = "";
+    batterylife_ = 0;
   }
 
   @java.lang.Override
@@ -46,6 +48,17 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             status_ = input.readBool();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            statusMsg_ = s;
+            break;
+          }
+          case 24: {
+
+            batterylife_ = input.readInt32();
             break;
           }
           default: {
@@ -89,6 +102,49 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
 
+  public static final int STATUSMSG_FIELD_NUMBER = 2;
+  private volatile java.lang.Object statusMsg_;
+  /**
+   * <code>string statusMsg = 2;</code>
+   */
+  public java.lang.String getStatusMsg() {
+    java.lang.Object ref = statusMsg_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      statusMsg_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string statusMsg = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getStatusMsgBytes() {
+    java.lang.Object ref = statusMsg_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      statusMsg_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BATTERYLIFE_FIELD_NUMBER = 3;
+  private int batterylife_;
+  /**
+   * <code>int32 batterylife = 3;</code>
+   */
+  public int getBatterylife() {
+    return batterylife_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -106,6 +162,12 @@ private static final long serialVersionUID = 0L;
     if (status_ != false) {
       output.writeBool(1, status_);
     }
+    if (!getStatusMsgBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, statusMsg_);
+    }
+    if (batterylife_ != 0) {
+      output.writeInt32(3, batterylife_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -118,6 +180,13 @@ private static final long serialVersionUID = 0L;
     if (status_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, status_);
+    }
+    if (!getStatusMsgBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, statusMsg_);
+    }
+    if (batterylife_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, batterylife_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -137,6 +206,10 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getStatus()
         == other.getStatus());
+    result = result && getStatusMsg()
+        .equals(other.getStatusMsg());
+    result = result && (getBatterylife()
+        == other.getBatterylife());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -151,6 +224,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getStatus());
+    hash = (37 * hash) + STATUSMSG_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusMsg().hashCode();
+    hash = (37 * hash) + BATTERYLIFE_FIELD_NUMBER;
+    hash = (53 * hash) + getBatterylife();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -286,6 +363,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       status_ = false;
 
+      statusMsg_ = "";
+
+      batterylife_ = 0;
+
       return this;
     }
 
@@ -313,6 +394,8 @@ private static final long serialVersionUID = 0L;
     public com.jackgallaher.smartlaptop.PowerStatus buildPartial() {
       com.jackgallaher.smartlaptop.PowerStatus result = new com.jackgallaher.smartlaptop.PowerStatus(this);
       result.status_ = status_;
+      result.statusMsg_ = statusMsg_;
+      result.batterylife_ = batterylife_;
       onBuilt();
       return result;
     }
@@ -363,6 +446,13 @@ private static final long serialVersionUID = 0L;
       if (other == com.jackgallaher.smartlaptop.PowerStatus.getDefaultInstance()) return this;
       if (other.getStatus() != false) {
         setStatus(other.getStatus());
+      }
+      if (!other.getStatusMsg().isEmpty()) {
+        statusMsg_ = other.statusMsg_;
+        onChanged();
+      }
+      if (other.getBatterylife() != 0) {
+        setBatterylife(other.getBatterylife());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -415,6 +505,101 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatus() {
       
       status_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object statusMsg_ = "";
+    /**
+     * <code>string statusMsg = 2;</code>
+     */
+    public java.lang.String getStatusMsg() {
+      java.lang.Object ref = statusMsg_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusMsg_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string statusMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStatusMsgBytes() {
+      java.lang.Object ref = statusMsg_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string statusMsg = 2;</code>
+     */
+    public Builder setStatusMsg(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      statusMsg_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string statusMsg = 2;</code>
+     */
+    public Builder clearStatusMsg() {
+      
+      statusMsg_ = getDefaultInstance().getStatusMsg();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string statusMsg = 2;</code>
+     */
+    public Builder setStatusMsgBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      statusMsg_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int batterylife_ ;
+    /**
+     * <code>int32 batterylife = 3;</code>
+     */
+    public int getBatterylife() {
+      return batterylife_;
+    }
+    /**
+     * <code>int32 batterylife = 3;</code>
+     */
+    public Builder setBatterylife(int value) {
+      
+      batterylife_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 batterylife = 3;</code>
+     */
+    public Builder clearBatterylife() {
+      
+      batterylife_ = 0;
       onChanged();
       return this;
     }

@@ -11,4 +11,19 @@ public interface PowerStatusOrBuilder extends
    * <code>bool status = 1;</code>
    */
   boolean getStatus();
+
+  /**
+   * <code>string statusMsg = 2;</code>
+   */
+  java.lang.String getStatusMsg();
+  /**
+   * <code>string statusMsg = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getStatusMsgBytes();
+
+  /**
+   * <code>int32 batterylife = 3;</code>
+   */
+  int getBatterylife();
 }

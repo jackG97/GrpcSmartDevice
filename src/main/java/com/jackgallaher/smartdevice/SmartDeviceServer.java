@@ -22,9 +22,6 @@ import com.google.protobuf.Empty;
 import com.jackgallaher.smartdevice.smartPhoneGrpc.smartPhoneImplBase;
 
 
-
-
-
 public class SmartDeviceServer extends smartPhoneImplBase  {
 	
 	private boolean phoneActive;
@@ -39,11 +36,11 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
 
 	
 	 public static void main(String[] args) throws IOException, InterruptedException {
-		 SmartDeviceServer stringserver = new SmartDeviceServer();
+		 SmartDeviceServer phoneserver = new SmartDeviceServer();
 		   
 		    int port = 50051;
 		    Server server = ServerBuilder.forPort(port)
-		        .addService(stringserver)
+		        .addService(phoneserver)
 		        .build()
 		        .start();
 		    
