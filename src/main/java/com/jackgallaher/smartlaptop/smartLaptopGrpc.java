@@ -28,21 +28,21 @@ public final class smartLaptopGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.jackgallaher.smartlaptop.PowerStatus> getSwitchOnMethod;
+      com.jackgallaher.smartlaptop.Status> getSwitchOnMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOn",
       requestType = com.google.protobuf.Empty.class,
-      responseType = com.jackgallaher.smartlaptop.PowerStatus.class,
+      responseType = com.jackgallaher.smartlaptop.Status.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.jackgallaher.smartlaptop.PowerStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.PowerStatus> getSwitchOnMethod;
+      com.jackgallaher.smartlaptop.Status> getSwitchOnMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.Status> getSwitchOnMethod;
     if ((getSwitchOnMethod = smartLaptopGrpc.getSwitchOnMethod) == null) {
       synchronized (smartLaptopGrpc.class) {
         if ((getSwitchOnMethod = smartLaptopGrpc.getSwitchOnMethod) == null) {
           smartLaptopGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartLaptop", "switchOn"))
@@ -50,7 +50,7 @@ public final class smartLaptopGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.jackgallaher.smartlaptop.PowerStatus.getDefaultInstance()))
+                  com.jackgallaher.smartlaptop.Status.getDefaultInstance()))
                   .setSchemaDescriptor(new smartLaptopMethodDescriptorSupplier("switchOn"))
                   .build();
           }
@@ -60,21 +60,21 @@ public final class smartLaptopGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.jackgallaher.smartlaptop.PowerStatus> getSwitchOffMethod;
+      com.jackgallaher.smartlaptop.Status> getSwitchOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOff",
       requestType = com.google.protobuf.Empty.class,
-      responseType = com.jackgallaher.smartlaptop.PowerStatus.class,
+      responseType = com.jackgallaher.smartlaptop.Status.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.jackgallaher.smartlaptop.PowerStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.PowerStatus> getSwitchOffMethod;
+      com.jackgallaher.smartlaptop.Status> getSwitchOffMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.Status> getSwitchOffMethod;
     if ((getSwitchOffMethod = smartLaptopGrpc.getSwitchOffMethod) == null) {
       synchronized (smartLaptopGrpc.class) {
         if ((getSwitchOffMethod = smartLaptopGrpc.getSwitchOffMethod) == null) {
           smartLaptopGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartLaptop", "switchOff"))
@@ -82,7 +82,7 @@ public final class smartLaptopGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.jackgallaher.smartlaptop.PowerStatus.getDefaultInstance()))
+                  com.jackgallaher.smartlaptop.Status.getDefaultInstance()))
                   .setSchemaDescriptor(new smartLaptopMethodDescriptorSupplier("switchOff"))
                   .build();
           }
@@ -123,6 +123,38 @@ public final class smartLaptopGrpc {
      return getStartChargingMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.jackgallaher.smartlaptop.PowerStatus> getLaptopStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "laptopStatus",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = com.jackgallaher.smartlaptop.PowerStatus.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.jackgallaher.smartlaptop.PowerStatus> getLaptopStatusMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.PowerStatus> getLaptopStatusMethod;
+    if ((getLaptopStatusMethod = smartLaptopGrpc.getLaptopStatusMethod) == null) {
+      synchronized (smartLaptopGrpc.class) {
+        if ((getLaptopStatusMethod = smartLaptopGrpc.getLaptopStatusMethod) == null) {
+          smartLaptopGrpc.getLaptopStatusMethod = getLaptopStatusMethod = 
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartlaptop.PowerStatus>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "smartdevice.smartLaptop", "laptopStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.jackgallaher.smartlaptop.PowerStatus.getDefaultInstance()))
+                  .setSchemaDescriptor(new smartLaptopMethodDescriptorSupplier("laptopStatus"))
+                  .build();
+          }
+        }
+     }
+     return getLaptopStatusMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -153,14 +185,14 @@ public final class smartLaptopGrpc {
     /**
      */
     public void switchOn(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.Status> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
     }
 
     /**
      */
     public void switchOff(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.Status> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
     }
 
@@ -171,6 +203,13 @@ public final class smartLaptopGrpc {
       asyncUnimplementedUnaryCall(getStartChargingMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void laptopStatus(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
+      asyncUnimplementedUnaryCall(getLaptopStatusMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -178,14 +217,14 @@ public final class smartLaptopGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 com.google.protobuf.Empty,
-                com.jackgallaher.smartlaptop.PowerStatus>(
+                com.jackgallaher.smartlaptop.Status>(
                   this, METHODID_SWITCH_ON)))
           .addMethod(
             getSwitchOffMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.google.protobuf.Empty,
-                com.jackgallaher.smartlaptop.PowerStatus>(
+                com.jackgallaher.smartlaptop.Status>(
                   this, METHODID_SWITCH_OFF)))
           .addMethod(
             getStartChargingMethod(),
@@ -194,6 +233,13 @@ public final class smartLaptopGrpc {
                 com.google.protobuf.Empty,
                 com.jackgallaher.smartlaptop.PowerStatus>(
                   this, METHODID_START_CHARGING)))
+          .addMethod(
+            getLaptopStatusMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Empty,
+                com.jackgallaher.smartlaptop.PowerStatus>(
+                  this, METHODID_LAPTOP_STATUS)))
           .build();
     }
   }
@@ -219,7 +265,7 @@ public final class smartLaptopGrpc {
     /**
      */
     public void switchOn(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.Status> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
     }
@@ -227,7 +273,7 @@ public final class smartLaptopGrpc {
     /**
      */
     public void switchOff(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.Status> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
     }
@@ -238,6 +284,14 @@ public final class smartLaptopGrpc {
         io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getStartChargingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void laptopStatus(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getLaptopStatusMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -261,14 +315,14 @@ public final class smartLaptopGrpc {
 
     /**
      */
-    public com.jackgallaher.smartlaptop.PowerStatus switchOn(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartlaptop.Status switchOn(com.google.protobuf.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOnMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.jackgallaher.smartlaptop.PowerStatus switchOff(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartlaptop.Status switchOff(com.google.protobuf.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOffMethod(), getCallOptions(), request);
     }
@@ -279,6 +333,13 @@ public final class smartLaptopGrpc {
         com.google.protobuf.Empty request) {
       return blockingServerStreamingCall(
           getChannel(), getStartChargingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.jackgallaher.smartlaptop.PowerStatus laptopStatus(com.google.protobuf.Empty request) {
+      return blockingUnaryCall(
+          getChannel(), getLaptopStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -302,7 +363,7 @@ public final class smartLaptopGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartlaptop.PowerStatus> switchOn(
+    public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartlaptop.Status> switchOn(
         com.google.protobuf.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
@@ -310,16 +371,25 @@ public final class smartLaptopGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartlaptop.PowerStatus> switchOff(
+    public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartlaptop.Status> switchOff(
         com.google.protobuf.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartlaptop.PowerStatus> laptopStatus(
+        com.google.protobuf.Empty request) {
+      return futureUnaryCall(
+          getChannel().newCall(getLaptopStatusMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_SWITCH_ON = 0;
   private static final int METHODID_SWITCH_OFF = 1;
   private static final int METHODID_START_CHARGING = 2;
+  private static final int METHODID_LAPTOP_STATUS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -340,14 +410,18 @@ public final class smartLaptopGrpc {
       switch (methodId) {
         case METHODID_SWITCH_ON:
           serviceImpl.switchOn((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.Status>) responseObserver);
           break;
         case METHODID_SWITCH_OFF:
           serviceImpl.switchOff((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.Status>) responseObserver);
           break;
         case METHODID_START_CHARGING:
           serviceImpl.startCharging((com.google.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus>) responseObserver);
+          break;
+        case METHODID_LAPTOP_STATUS:
+          serviceImpl.laptopStatus((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartlaptop.PowerStatus>) responseObserver);
           break;
         default:
@@ -414,6 +488,7 @@ public final class smartLaptopGrpc {
               .addMethod(getSwitchOnMethod())
               .addMethod(getSwitchOffMethod())
               .addMethod(getStartChargingMethod())
+              .addMethod(getLaptopStatusMethod())
               .build();
         }
       }

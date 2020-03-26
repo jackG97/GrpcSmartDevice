@@ -13,15 +13,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Logger;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.protobuf.Empty;
+import com.jackgallaher.smartlaptop.Status;
 import com.jackgallaher.smartlaptop.smartLaptopGrpc.smartLaptopImplBase;
-
-
 
 
 public class SmartLaptopServer extends smartLaptopImplBase {
@@ -43,34 +40,34 @@ public class SmartLaptopServer extends smartLaptopImplBase {
 		        .start();
 		    
 		    logger.info("Server started, listening on " + port);
-		    		    
+		    		     
 		    server.awaitTermination();
 	 }
 	 
 	 public void switchOn(Empty request,
-        io.grpc.stub.StreamObserver<PowerStatus> response) {
+        io.grpc.stub.StreamObserver<Status> response) {
         laptopActive = true;
         System.out.println("laptop is On");
         
-        response.onNext(PowerStatus.newBuilder()
+        response.onNext(Status.newBuilder()
                 .setStatus(laptopActive)
                 .build());
         response.onCompleted();
     }
 	 
 	    public void switchOff(Empty request,
-           io.grpc.stub.StreamObserver<PowerStatus> response) {
+           io.grpc.stub.StreamObserver<Status> response) {
            laptopActive = false; 
            System.out.println("laptop is Off");
                        
-           response.onNext(PowerStatus.newBuilder()
+           response.onNext(Status.newBuilder()
                    .setStatus(laptopActive)
                    .build());
            response.onCompleted();           
        }
 	    
 	      @Override
-	        public void startCharging(com.google.protobuf.Empty request, io.grpc.stub.StreamObserver<PowerStatus> responseObserver) 
+	        public void startCharging(Empty request, io.grpc.stub.StreamObserver<PowerStatus> responseObserver) 
 	        {
 	            Timer c = new Timer();
 	            c.schedule(new Chargeup(responseObserver), 0, 2000);
@@ -97,6 +94,18 @@ public class SmartLaptopServer extends smartLaptopImplBase {
 	                    this.cancel();
 	                }
 	            }
+	        }
+	        
+	        public void laptopStatus(Empty request, io.grpc.stub.StreamObserver<PowerStatus> response)
+	        {
+	        	if(power_status == false) {
+	        		response.onNext(PowerStatus.newBuilder().setStatus(power_status).setBatterylife(laptop_batterylife).build());
+	        	}
+	        	else
+	        	{
+	        		response.onNext(PowerStatus.newBuilder().setStatus(power_status).setBatterylife(laptop_batterylife).build());
+	        	}
+	        	response.onCompleted();
 	        }
 	        
 
