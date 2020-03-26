@@ -8,7 +8,33 @@ option java_multiple_files = true;
 option java_package = "com.jackgallaher.smartpda";
 option java_outer_classname = "SmartDevicePdaImpl";
 
-service{
-	rpc 
+service smartPda{
+	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc getAppointments (Date) returns (stream Appointment) {}  
+    rpc getToDoList (stream Day) returns (stream ToDoList) {}
+} 
 
+message PowerStatus{
+  bool status = 1;
+}
+
+message Date{
+    string date = 1;
+}
+
+message Appointment {
+    string title = 1;
+    string note = 2;
+    string time = 3;
+    string date = 4;    
+}
+
+message Day{
+    string day = 1;
+}
+
+message ToDoList {
+	string day = 1;
+	string todo = 2;
 }
