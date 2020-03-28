@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.jackgallaher.smartprojectors;
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "com.jackgallaher.smartprojectors";
+
+service smartProjectors{
+
+	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
+    rpc inputHDMI(google.protobuf.Empty) returns (Response) {}
+    rpc inputVGA(google.protobuf.Empty) returns (Response) {}
+
+}
+
+message PowerStatus{
+    bool status = 1;
+    }
+     
+message Response{
+	string text = 1;
+}

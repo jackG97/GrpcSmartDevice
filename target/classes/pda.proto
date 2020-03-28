@@ -7,7 +7,7 @@ import "google/protobuf/empty.proto";
 option java_multiple_files = true;
 option java_package = "com.jackgallaher.smartpda";
 option java_outer_classname = "SmartDevicePdaImpl";
-
+ 
 service smartPda{
 	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
     rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
