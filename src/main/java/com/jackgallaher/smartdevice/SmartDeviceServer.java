@@ -25,7 +25,7 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
 	
 	private boolean phoneActive;
 	
-	
+	//variables
 	private List <Contacts> contacts;
 	private String name;
 	private Integer number;
@@ -33,7 +33,7 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
 
 	private static final Logger logger = Logger.getLogger(SmartDeviceServer.class.getName());
 
-	
+	//The lanuches on the port 50051 and will listen out for any requests and will await termination
 	 public static void main(String[] args) throws IOException, InterruptedException {
 		 SmartDeviceServer phoneserver = new SmartDeviceServer();
 		   
@@ -48,6 +48,7 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
 		    server.awaitTermination();
 	 }
 	 
+	 //This method is based on a boolean statement stating that the phone being switched on is true
 	 public void switchOn(Empty request,
          io.grpc.stub.StreamObserver<PowerStatus> response) {
          phoneActive = true;
@@ -59,6 +60,7 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
          response.onCompleted();
      }
 	 
+	//This method is based on a boolean statement stating that the phone being switched off is false
 	    public void switchOff(Empty request,
             io.grpc.stub.StreamObserver<PowerStatus> response) {
             phoneActive = false; 
@@ -70,6 +72,7 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
             response.onCompleted();           
         }
 	    
+	    //method is used to retrieve contacts on phone from the arraylist
 	    public void findContacts(Empty request, io.grpc.stub.StreamObserver<Contacts> responseObserver) {
 	    	
 	    	 contacts = new ArrayList<Contacts>();
@@ -98,6 +101,7 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
 	    
 	    }
 	    
+	    //this method is used to add a contact to a phone
 	    public void addContact(Contacts request, io.grpc.stub.StreamObserver<Response> responseObserver) {
 	    	StringBuilder builder = new StringBuilder(request.getNumber());
 			String output = "Contact Successfully Addded";

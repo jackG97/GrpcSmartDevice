@@ -20,6 +20,7 @@ import com.jackgallaher.smartpda.ToDoList;
 
 public class SmartPdaServer extends smartPdaImplBase {
 	
+	//varibles
 	private List<Appointment> appointments;
 	private List<ToDoList> todolist;
     private String title;
@@ -31,7 +32,7 @@ public class SmartPdaServer extends smartPdaImplBase {
 	private boolean pdaActive;
 	private static final Logger logger = Logger.getLogger(SmartPdaServer.class.getName());
 	
-	
+	//The launches on the port 50051 and will listen out for any requests and will await termination
 	public static void main(String[] args) throws IOException, InterruptedException{
 		SmartPdaServer pdaserver = new SmartPdaServer();
 		
@@ -45,6 +46,7 @@ public class SmartPdaServer extends smartPdaImplBase {
 	    		server.awaitTermination();
 		}
 	
+	//This method is based on a boolean statement stating that the pda being switched on is true
 	public void switchOn(Empty request,
 	        io.grpc.stub.StreamObserver<PowerStatus> response) {
 		pdaActive = true;
@@ -56,6 +58,7 @@ public class SmartPdaServer extends smartPdaImplBase {
 		response.onCompleted();
 	}
 	
+	//This method is based on a boolean statement stating that the pda being switched off is false
 	public void switchOff(Empty request, 
 			io.grpc.stub.StreamObserver<PowerStatus> response) {
 	           pdaActive = false; 
@@ -67,6 +70,7 @@ public class SmartPdaServer extends smartPdaImplBase {
 	           response.onCompleted();           
 	       }
 	
+	//this method uses server streaming. the user requests a date and the server responds with either an appointment for that date or nothing on that date
 	public void getAppointments(Date request, io.grpc.stub.StreamObserver<Appointment> responseObserver) {
 		appointments = new ArrayList<Appointment>();
 		Appointment facebookmeeting = Appointment.newBuilder().setTitle("Mark meeting").setNote("New application features meeting").setTime("12:00pm").setDate("23/02/20").build();
@@ -98,7 +102,7 @@ public class SmartPdaServer extends smartPdaImplBase {
 		
 	}
 	
-	
+	//this method is used as Bidirectional streaming where the user can request multiple days and get back multiple to do list activities on those days selects.
 	public void getToDoList(StreamObserver<Day> request, io.grpc.stub.StreamObserver<ToDoList> responseObserver) {
 		
 			todolist = new ArrayList<ToDoList>();

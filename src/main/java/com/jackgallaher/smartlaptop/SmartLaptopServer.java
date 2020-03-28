@@ -23,13 +23,14 @@ import com.jackgallaher.smartlaptop.smartLaptopGrpc.smartLaptopImplBase;
 
 public class SmartLaptopServer extends smartLaptopImplBase {
 	
+	//varibles
 	private boolean laptopActive;
 	 private boolean power_status = false;
      private int laptop_batterylife = 0;
 	
 	private static final Logger logger = Logger.getLogger(SmartLaptopServer.class.getName());
 
-	
+	//The lanuches on the port 50051 and will listen out for any requests and will await termination
 	 public static void main(String[] args) throws IOException, InterruptedException {
 		 SmartLaptopServer laptopserver = new SmartLaptopServer();
 		   
@@ -44,6 +45,7 @@ public class SmartLaptopServer extends smartLaptopImplBase {
 		    server.awaitTermination();
 	 }
 	 
+	 //This method is based on a boolean statement stating that the laptop being switched on is true
 	 public void switchOn(Empty request,
         io.grpc.stub.StreamObserver<Status> response) {
         laptopActive = true;
@@ -55,6 +57,7 @@ public class SmartLaptopServer extends smartLaptopImplBase {
         response.onCompleted();
     }
 	 
+		//This method is based on a boolean statement stating that the laptop being switched off is false
 	    public void switchOff(Empty request,
            io.grpc.stub.StreamObserver<Status> response) {
            laptopActive = false; 
@@ -66,6 +69,8 @@ public class SmartLaptopServer extends smartLaptopImplBase {
            response.onCompleted();           
        }
 	    
+	    //this method is used to charge laptop. it uses server streaming where each stream represents the battery life of the laptop increases by 10%
+	    //the final stream is the output stating the laptop is fully charged.
 	      @Override
 	        public void startCharging(Empty request, io.grpc.stub.StreamObserver<PowerStatus> responseObserver) 
 	        {
@@ -96,6 +101,7 @@ public class SmartLaptopServer extends smartLaptopImplBase {
 	            }
 	        }
 	        
+	        //this method returns the status of the lap such off whether its off or charged.
 	        public void laptopStatus(Empty request, io.grpc.stub.StreamObserver<PowerStatus> response)
 	        {
 	        	if(power_status == false) {
