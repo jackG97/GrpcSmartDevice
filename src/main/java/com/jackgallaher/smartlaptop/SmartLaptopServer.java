@@ -17,33 +17,57 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.protobuf.Empty;
+import com.jackgallaher.smartdevice.SmartDeviceServer;
+import com.jackgallaher.smartdevice.smartPhoneGrpc;
 import com.jackgallaher.smartlaptop.Status;
 import com.jackgallaher.smartlaptop.smartLaptopGrpc.smartLaptopImplBase;
+import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
 
 
-public class SmartLaptopServer extends smartLaptopImplBase {
+public class SmartLaptopServer {
 	
 	//varibles
-	private boolean laptopActive;
-	 private boolean power_status = false;
-     private int laptop_batterylife = 0;
+	private int port = 50051;
+	private Server server;
 	
 	private static final Logger logger = Logger.getLogger(SmartLaptopServer.class.getName());
 
 	//The lanuches on the port 50051 and will listen out for any requests and will await termination
-	 public static void main(String[] args) throws IOException, InterruptedException {
-		 SmartLaptopServer laptopserver = new SmartLaptopServer();
-		   
-		    int port = 50051;
+	 private void start() throws Exception {
 		    Server server = ServerBuilder.forPort(port)
-		        .addService(laptopserver)
+		        .addService(new SmartLaptopImpl())
 		        .build()
 		        .start();
-		    
+		    JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartLaptop", "_laptop._udp.local.", "",port);
 		    logger.info("Server started, listening on " + port);
-		    		     
-		    server.awaitTermination();
+		    Runtime.getRuntime().addShutdownHook(new Thread() {
+		    	
+		    	public void run() {
+		    		System.err.println("Grpc server is shutting down");
+		    		SmartLaptopServer.this.stop();
+		    		System.err.println("Shutdown");
+		    	}
+		    });
 	 }
+	 
+	 public void stop() {
+		 if (server != null) {
+			 server.shutdown();
+		 }
+	 }
+		    		     
+	 public void blockUntilShutdown() throws InterruptedException {
+		 if (server != null) {
+			 server.awaitTermination();
+		}
+		
+	 }
+	 
+	 private class SmartLaptopImpl extends smartLaptopGrpc.smartLaptopImplBase {
+	 
+	 private boolean laptopActive;
+	 private boolean power_status = false;
+     private int laptop_batterylife = 0;
 	 
 	 //This method is based on a boolean statement stating that the laptop being switched on is true
 	 public void switchOn(Empty request,
@@ -113,6 +137,12 @@ public class SmartLaptopServer extends smartLaptopImplBase {
 	        	}
 	        	response.onCompleted();
 	        }
+	 }
 	        
+	    	public static void main(String []args) throws Exception{
+	    		final SmartLaptopServer laptop_server = new SmartLaptopServer();
+	    		laptop_server.start();
+	    		laptop_server.blockUntilShutdown();
+	    	}
+	    }
 
-}

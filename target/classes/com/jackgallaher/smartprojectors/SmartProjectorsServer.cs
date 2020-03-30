@@ -8,9 +8,9 @@ io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 using java.io.IOException;
 using java.util.logging.Logger;
 using com.google.protobuf.Empty;
-using com.jackgallaher.smartprojector.Response;
-using com.jackgallaher.smartprojector.PowerStatus;
-using com.jackgallaher.smartprojector.smartProjectorGrpc.smartProjectorImplBase;
+using com.jackgallaher.smartprojectors.Response;
+using com.jackgallaher.smartprojectors.PowerStatus;
+using com.jackgallaher.smartprojectors.smartProjectsorGrpc.smartProjectorsImplBase;
 public class SmartProjectorServer : smartProjectorImplBase {
     
     private bool projectorActive;

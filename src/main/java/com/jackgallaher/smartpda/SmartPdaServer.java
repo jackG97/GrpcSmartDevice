@@ -13,12 +13,49 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.google.protobuf.Empty;
+import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
 import com.jackgallaher.smartpda.PowerStatus;
 
 import com.jackgallaher.smartpda.smartPdaGrpc.smartPdaImplBase;
 import com.jackgallaher.smartpda.ToDoList;
 
-public class SmartPdaServer extends smartPdaImplBase {
+public class SmartPdaServer {
+	
+	private int port = 50051;
+	private Server server;
+
+	private static final Logger logger = Logger.getLogger(SmartPdaServer.class.getName());
+	
+	//The launches on the port 50051 and will listen out for any requests and will await termination
+	private void start() throws Exception {
+		Server server = ServerBuilder.forPort(port)
+				.addService(new SmartPdaImpl())
+				.build()
+				.start();
+		JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartPda", "_pda._udp.local", "",port);
+			    logger.info("Server started, listening on " + port);
+			    Runtime.getRuntime().addShutdownHook(new Thread(){
+			    
+			    public void run () {
+			    	System.err.println("Grpc server is shutting down");
+			    	SmartPdaServer.this.stop();
+			    	System.err.println("Shutdown");
+			    }
+			});
+		}
+
+			public void stop() {
+				if (server != null) {
+					server.shutdown();
+				}
+			}
+			public void blockUntilShutdown() throws InterruptedException{
+				if (server != null) {
+	    		server.awaitTermination();
+				}
+			}
+			
+	private class SmartPdaImpl extends smartPdaGrpc.smartPdaImplBase{
 	
 	//varibles
 	private List<Appointment> appointments;
@@ -30,21 +67,6 @@ public class SmartPdaServer extends smartPdaImplBase {
     private String day;
 	private String todo;
 	private boolean pdaActive;
-	private static final Logger logger = Logger.getLogger(SmartPdaServer.class.getName());
-	
-	//The launches on the port 50051 and will listen out for any requests and will await termination
-	public static void main(String[] args) throws IOException, InterruptedException{
-		SmartPdaServer pdaserver = new SmartPdaServer();
-		
-		int port = 50051;
-		Server server = ServerBuilder.forPort(port)
-				.addService(pdaserver)
-				.build()
-				.start();
-			    logger.info("Server started, listening on " + port);
-	    
-	    		server.awaitTermination();
-		}
 	
 	//This method is based on a boolean statement stating that the pda being switched on is true
 	public void switchOn(Empty request,
@@ -141,5 +163,11 @@ public class SmartPdaServer extends smartPdaImplBase {
 			
 			}
 		}
+ 	public static void main(String []args) throws Exception{
+		final SmartPdaServer pda_server = new SmartPdaServer();
+		pda_server.start();
+		pda_server.blockUntilShutdown();
+	}
+}
 	
 

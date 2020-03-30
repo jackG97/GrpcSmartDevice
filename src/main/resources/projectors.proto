@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package com.jackgallaher.smartprojectors;
+package smartprojectors;
 
 import "google/protobuf/empty.proto";
 
-option csharp_namespace = "com.jackgallaher.smartprojectors";
+option csharp_namespace = "smartprojectors";
 
 service smartProjectors{
 

@@ -12,41 +12,63 @@ import java.util.List;
 
 import java.util.logging.Logger;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.protobuf.Empty;
+import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
 import com.jackgallaher.smartdevice.smartPhoneGrpc.smartPhoneImplBase;
 
 
-public class SmartDeviceServer extends smartPhoneImplBase  {
-	
-	private boolean phoneActive;
-	
-	//variables
-	private List <Contacts> contacts;
-	private String name;
-	private Integer number;
-	private String network;
+public class SmartDeviceServer  {
+
+
+	private int port = 50051;
+	private Server server;
 
 	private static final Logger logger = Logger.getLogger(SmartDeviceServer.class.getName());
 
 	//The lanuches on the port 50051 and will listen out for any requests and will await termination
-	 public static void main(String[] args) throws IOException, InterruptedException {
-		 SmartDeviceServer phoneserver = new SmartDeviceServer();
-		   
-		    int port = 50051;
+	private void start() throws Exception {
 		    Server server = ServerBuilder.forPort(port)
-		        .addService(phoneserver)
+		        .addService(new SmartPhoneImpl())
 		        .build()
 		        .start();
-		    
+		    JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartDevice", "_phone._udp.local.", "",port);
 		    logger.info("Server started, listening on " + port);
-		    		    
-		    server.awaitTermination();
+		    Runtime.getRuntime().addShutdownHook(new Thread() {	
+		    
+		    public void run() {
+		    	System.err.println("Grpc server is shutting down");
+		    	SmartDeviceServer.this.stop();
+		    	System.err.println("Shutdown");
+		    }
+		 });
 	 }
+	 
+	 public void stop() {
+		 if (server != null) {
+			 server.shutdown();
+		    
+	 }
+}
+
+
+	public void blockUntilShutdown() throws InterruptedException {
+	 if (server != null) {
+		 server.awaitTermination();
+	}
+	}
+	
+	private class SmartPhoneImpl extends smartPhoneGrpc.smartPhoneImplBase {
+		
+		//variables
+		private List <Contacts> contacts;
+		private String name;
+		private Integer number;
+		private String network;
+		private boolean phoneActive;
+	
 	 
 	 //This method is based on a boolean statement stating that the phone being switched on is true
 	 public void switchOn(Empty request,
@@ -114,6 +136,13 @@ public class SmartDeviceServer extends smartPhoneImplBase  {
 			System.out.println("Contact successfully added");
 		}
 	    }
+	
+	public static void main(String []args) throws Exception{
+		final SmartDeviceServer phone_server = new SmartDeviceServer();
+		phone_server.start();
+		phone_server.blockUntilShutdown();
+	}
+}
 
 
 
