@@ -15,7 +15,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 	ServiceObserver observer;
 	
 	private jmDNSServiceTracker() {
-		try {
+		try {// Register a service
 			jmdns = JmDNS.create(InetAddress.getLocalHost());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -33,6 +33,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 	public void register(ServiceObserver observer) {
 		this.observer = observer;
 		for (String s : observer.serviceInterests()) {
+			// Add a service listener
 			jmdns.addServiceListener(s, this);
 		}
 	}
@@ -48,6 +49,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 	
 	
 	@Override
+	//service resolution may take a few second to resolve
 	public void serviceAdded(ServiceEvent event) {
 		// TODO Auto-generated method stub
 		System.out.println(event);
@@ -61,6 +63,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 		
 	}
 
+	//A service has been resolved. Its details are now available in the ServiceInfo record
 	@Override
 	public void serviceResolved(ServiceEvent event) {
 		// TODO Auto-generated method stub

@@ -41,7 +41,7 @@ public class SmartLaptopServer {
 		    JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartLaptop", "_laptop._udp.local.", "",port);
 		    logger.info("Server started, listening on " + port);
 		    Runtime.getRuntime().addShutdownHook(new Thread() {
-		    	
+		    	// Use stderr here since the logger may have been reset by its JVM shutdown hook
 		    	public void run() {
 		    		System.err.println("Grpc server is shutting down");
 		    		SmartLaptopServer.this.stop();
@@ -55,7 +55,8 @@ public class SmartLaptopServer {
 			 server.shutdown();
 		 }
 	 }
-		    		     
+		    	
+	// Await termination on the main thread since the grpc library uses daemon threads
 	 public void blockUntilShutdown() throws InterruptedException {
 		 if (server != null) {
 			 server.awaitTermination();
@@ -139,6 +140,7 @@ public class SmartLaptopServer {
 	        }
 	 }
 	        
+	// Main launches the server from the command line
 	    	public static void main(String []args) throws Exception{
 	    		final SmartLaptopServer laptop_server = new SmartLaptopServer();
 	    		laptop_server.start();

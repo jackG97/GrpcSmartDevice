@@ -22,13 +22,13 @@ import com.jackgallaher.smartdevice.smartPhoneGrpc.smartPhoneImplBase;
 
 public class SmartDeviceServer  {
 
-
+	//variables for server and port being used
 	private int port = 50051;
 	private Server server;
 
 	private static final Logger logger = Logger.getLogger(SmartDeviceServer.class.getName());
 
-	//The lanuches on the port 50051 and will listen out for any requests and will await termination
+	//The lauches on the port 50051 and will listen out for any requests and will await termination
 	private void start() throws Exception {
 		    Server server = ServerBuilder.forPort(port)
 		        .addService(new SmartPhoneImpl())
@@ -37,7 +37,8 @@ public class SmartDeviceServer  {
 		    JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartDevice", "_phone._udp.local.", "",port);
 		    logger.info("Server started, listening on " + port);
 		    Runtime.getRuntime().addShutdownHook(new Thread() {	
-		    
+		    	
+		   // Use stderr here since the logger may have been reset by its JVM shutdown hook
 		    public void run() {
 		    	System.err.println("Grpc server is shutting down");
 		    	SmartDeviceServer.this.stop();
@@ -52,8 +53,7 @@ public class SmartDeviceServer  {
 		    
 	 }
 }
-
-
+	 // Await termination on the main thread since the grpc library uses daemon threads
 	public void blockUntilShutdown() throws InterruptedException {
 	 if (server != null) {
 		 server.awaitTermination();
@@ -137,6 +137,7 @@ public class SmartDeviceServer  {
 		}
 	    }
 	
+	// Main launches the server from the command line
 	public static void main(String []args) throws Exception{
 		final SmartDeviceServer phone_server = new SmartDeviceServer();
 		phone_server.start();

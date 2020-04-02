@@ -35,7 +35,7 @@ public class SmartPdaServer {
 		JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartPda", "_pda._udp.local", "",port);
 			    logger.info("Server started, listening on " + port);
 			    Runtime.getRuntime().addShutdownHook(new Thread(){
-			    
+			    	// Use stderr here because the logger may have been reset by the JVM shutdown hook
 			    public void run () {
 			    	System.err.println("Grpc server is shutting down");
 			    	SmartPdaServer.this.stop();
@@ -49,6 +49,8 @@ public class SmartPdaServer {
 					server.shutdown();
 				}
 			}
+			
+			// Await termination on the main thread since the grpc library uses daemon threads
 			public void blockUntilShutdown() throws InterruptedException{
 				if (server != null) {
 	    		server.awaitTermination();
@@ -163,6 +165,8 @@ public class SmartPdaServer {
 			
 			}
 		}
+	
+	// Main launches the server from the command line
  	public static void main(String []args) throws Exception{
 		final SmartPdaServer pda_server = new SmartPdaServer();
 		pda_server.start();

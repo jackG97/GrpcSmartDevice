@@ -1072,8 +1072,8 @@ public final class Projectors {
       ".Empty\032*.com.jackgallaher.smartprojector" +
       "s.Response\"\000\022P\n\010inputVGA\022\026.google.protob" +
       "uf.Empty\032*.com.jackgallaher.smartproject" +
-      "ors.Response\"\000B#\252\002 com.jackgallaher.smar" +
-      "tprojectorsb\006proto3"
+      "ors.Response\"\000B\022\252\002\017smartprojectorsb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

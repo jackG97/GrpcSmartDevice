@@ -27,14 +27,14 @@ public class SmartProjectorServer : smartProjectorImplBase {
     
     public void switchOn(Empty request, io.grpc.stub.StreamObserver<PowerStatus> response) {
         this.projectorActive = true;
-        System.out.println("Projector is on");
+        Console.WriteLine("Projector is on");
         response.onNext(PowerStatus.newBuilder().setStatus(this.projectorActive).build());
         response.onCompleted();
     }
     
     public void switchOff(Empty request, io.grpc.stub.StreamObserver<PowerStatus> response) {
         this.projectorActive = false;
-        System.out.println("Projector is Off");
+        Console.WriteLine("Projector is Off");
         response.onNext(PowerStatus.newBuilder().setStatus(this.projectorActive).build());
         response.onCompleted();
     }

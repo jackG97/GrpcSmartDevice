@@ -15,7 +15,9 @@ public class JmDNSRegistrationHelper {
     
     public JmDNSRegistrationHelper(String name, String type, String location, int port) {
     	try {
+    		// Create a JmDNS instance
     		jmdns = JmDNS.create(InetAddress.getLocalHost());
+    		// Register a service
     		information = ServiceInfo.create(type, name, port, "Params=" +location);
     		jmdns.registerService(information);
     		System.out.println("ServiceInfo: "+information.toString() +"\nJMDNS: "+jmdns.toString());
@@ -30,7 +32,8 @@ public class JmDNSRegistrationHelper {
     	server.close();
     	return port;
     }
-	
+    
+ // Unregister services
     public void Register() {
     	jmdns.unregisterService(information);
     }
