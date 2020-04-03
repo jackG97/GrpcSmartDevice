@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.protobuf.Empty;
+import com.jackgallaher.smartdevice.Empty;
 import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
 import com.jackgallaher.smartdevice.smartPhoneGrpc.smartPhoneImplBase;
 
@@ -28,7 +28,7 @@ public class SmartDeviceServer  {
 
 	private static final Logger logger = Logger.getLogger(SmartDeviceServer.class.getName());
 
-	//The lauches on the port 50051 and will listen out for any requests and will await termination
+	//The launches on the port 50051 and will listen out for any requests and will await termination
 	private void start() throws Exception {
 		    Server server = ServerBuilder.forPort(port)
 		        .addService(new SmartPhoneImpl())
@@ -135,6 +135,8 @@ public class SmartDeviceServer  {
 			responseObserver.onCompleted();
 			System.out.println("Contact successfully added");
 		}
+	   
+	    
 	    }
 	
 	// Main launches the server from the command line
@@ -143,6 +145,7 @@ public class SmartDeviceServer  {
 		phone_server.start();
 		phone_server.blockUntilShutdown();
 	}
+	
 }
 
 

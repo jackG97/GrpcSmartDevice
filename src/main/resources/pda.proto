@@ -2,17 +2,17 @@ syntax = "proto3";
 
 package smartdevice;
 
-import "google/protobuf/empty.proto";
 
 option java_multiple_files = true;
 option java_package = "com.jackgallaher.smartpda";
 option java_outer_classname = "SmartDevicePdaImpl";
  
 service smartPda{
-	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
-    rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
+	rpc switchOn(Empty) returns (PowerStatus) {}
+    rpc switchOff(Empty) returns (PowerStatus) {}
     rpc getAppointments (Date) returns (stream Appointment) {}  
     rpc getToDoList (stream Day) returns (stream ToDoList) {}
+    rpc getMP3AndMP4Files (Type) returns (stream PlayableFiles) {}
 } 
 
 message PowerStatus{
@@ -37,4 +37,17 @@ message Day{
 message ToDoList {
 	string day = 1;
 	string todo = 2;
+}
+
+message Empty {
+
+}
+
+message Type {
+	string type = 2;
+}
+
+message PlayableFiles{
+	string filename = 1;
+	string type = 2;
 }

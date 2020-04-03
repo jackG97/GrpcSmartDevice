@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.protobuf.Empty;
+import com.jackgallaher.smartlaptop.Empty;
 import com.jackgallaher.smartdevice.SmartDeviceServer;
 import com.jackgallaher.smartdevice.smartPhoneGrpc;
 import com.jackgallaher.smartlaptop.Status;
@@ -66,18 +66,19 @@ public class SmartLaptopServer {
 	 
 	 private class SmartLaptopImpl extends smartLaptopGrpc.smartLaptopImplBase {
 	 
-	 private boolean laptopActive;
+	
 	 private boolean power_status = false;
+	 private boolean power_status1 = true;
      private int laptop_batterylife = 0;
 	 
 	 //This method is based on a boolean statement stating that the laptop being switched on is true
 	 public void switchOn(Empty request,
         io.grpc.stub.StreamObserver<Status> response) {
-        laptopActive = true;
+		 power_status1 = true;
         System.out.println("laptop is On");
         
         response.onNext(Status.newBuilder()
-                .setStatus(laptopActive)
+                .setStatus(power_status1)
                 .build());
         response.onCompleted();
     }
@@ -85,11 +86,11 @@ public class SmartLaptopServer {
 		//This method is based on a boolean statement stating that the laptop being switched off is false
 	    public void switchOff(Empty request,
            io.grpc.stub.StreamObserver<Status> response) {
-           laptopActive = false; 
+	    	power_status = false; 
            System.out.println("laptop is Off");
                        
            response.onNext(Status.newBuilder()
-                   .setStatus(laptopActive)
+                   .setStatus(power_status)
                    .build());
            response.onCompleted();           
        }
@@ -115,7 +116,7 @@ public class SmartLaptopServer {
 	            public void run() {
 	                if (laptop_batterylife < 100) {
 	                	laptop_batterylife += 10;
-	                    PowerStatus power_status = PowerStatus.newBuilder().setBatterylife(laptop_batterylife).build();
+	                    PowerStatus power_status = PowerStatus.newBuilder().setStatusMsg("Charging").setBatterylife(laptop_batterylife).build();
 	                    streamObserver.onNext(power_status);
 	                } else {
 	                    PowerStatus power_status = PowerStatus.newBuilder().setStatusMsg("Laptop is at 100%, Charge Completed").setBatterylife(laptop_batterylife).build();
@@ -134,10 +135,12 @@ public class SmartLaptopServer {
 	        	}
 	        	else
 	        	{
-	        		response.onNext(PowerStatus.newBuilder().setStatus(power_status).setBatterylife(laptop_batterylife).build());
+	        		response.onNext(PowerStatus.newBuilder().setStatus(power_status1).setBatterylife(laptop_batterylife).build());
 	        	}
 	        	response.onCompleted();
 	        }
+	        
+	        
 	 }
 	        
 	// Main launches the server from the command line

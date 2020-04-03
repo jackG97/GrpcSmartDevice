@@ -33,7 +33,7 @@ public class JmDNSRegistrationHelper {
     	return port;
     }
     
- // Unregister services
+    // Unregister services
     public void Register() {
     	jmdns.unregisterService(information);
     }

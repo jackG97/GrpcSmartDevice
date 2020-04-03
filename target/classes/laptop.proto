@@ -2,20 +2,18 @@ syntax = "proto3";
 
 package smartdevice;
 
-import "google/protobuf/empty.proto";
 
 option java_multiple_files = true;
 option java_package = "com.jackgallaher.smartlaptop";
 option java_outer_classname = "SmartDeviceLaptopImpl";
 
 service smartLaptop {
-	rpc switchOn(google.protobuf.Empty) returns (Status) {}
-    rpc switchOff(google.protobuf.Empty) returns (Status) {}
-    rpc startCharging(google.protobuf.Empty) returns (stream PowerStatus) {}
-    rpc laptopStatus(google.protobuf.Empty) returns (PowerStatus) {}
+	rpc switchOn(Empty) returns (Status) {}
+    rpc switchOff(Empty) returns (Status) {}
+    rpc startCharging(Empty) returns (stream PowerStatus) {}
+    rpc laptopStatus(Empty) returns (PowerStatus) {}
 
 }
-
 
 message Status{
     bool status = 1;
@@ -25,4 +23,8 @@ message PowerStatus{
     bool status = 1;
     string statusMsg = 2;
   	int32 batterylife = 3;
+}
+
+message Empty{
+
 }

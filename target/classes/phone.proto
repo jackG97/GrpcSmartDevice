@@ -2,17 +2,15 @@ syntax = "proto3";
 
 package smartdevice;
 
-import "google/protobuf/empty.proto";
-
 
 option java_multiple_files = true;
 option java_package = "com.jackgallaher.smartdevice";
 option java_outer_classname = "SmartDeviceImpl";
 
 service smartPhone {
-	rpc switchOn(google.protobuf.Empty) returns (PowerStatus) {}
-    rpc switchOff(google.protobuf.Empty) returns (PowerStatus) {}
-    rpc findContacts(google.protobuf.Empty) returns (stream Contacts) {}
+	rpc switchOn(Empty) returns (PowerStatus) {}
+    rpc switchOff(Empty) returns (PowerStatus) {}
+    rpc findContacts(Empty) returns (stream Contacts) {}
     rpc addContact(Contacts) returns (Response) {}
 }
 
@@ -29,6 +27,10 @@ message Contacts{
 
 message Response{
 	string text = 1;
+}
+
+message Empty{
+
 }
 
 

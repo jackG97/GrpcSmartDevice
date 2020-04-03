@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import com.google.protobuf.Empty;
+import javax.print.attribute.standard.Media;
+
+import com.jackgallaher.smartpda.DayOrBuilder;
 import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
 import com.jackgallaher.smartpda.PowerStatus;
 
@@ -62,12 +64,15 @@ public class SmartPdaServer {
 	//varibles
 	private List<Appointment> appointments;
 	private List<ToDoList> todolist;
+	private List<PlayableFiles> playablefiles;
     private String title;
     private String note;
     private String date;
     private String time;
     private String day;
 	private String todo;
+	private String type;
+	private String filename;
 	private boolean pdaActive;
 	
 	//This method is based on a boolean statement stating that the pda being switched on is true
@@ -126,7 +131,7 @@ public class SmartPdaServer {
 		
 	}
 	
-	//this method is used as Bidirectional streaming where the user can request multiple days and get back multiple to do list activities on those days selects.
+	//this method is used as Bidirectional streaming where the user can request multiple days and get back multiple to do list activities on those days selected.
 	public void getToDoList(StreamObserver<Day> request, io.grpc.stub.StreamObserver<ToDoList> responseObserver) {
 		
 			todolist = new ArrayList<ToDoList>();
@@ -164,7 +169,48 @@ public class SmartPdaServer {
 			responseObserver.onCompleted();
 			
 			}
+	
+	//this method uses server streaming. the user requests an MP type (mp3 or mp4) and the server responds with either the playable files for that type requested.
+	public void getMP3AndMP4Files(Type request, io.grpc.stub.StreamObserver<PlayableFiles> responseObserver) {
+		playablefiles = new ArrayList<PlayableFiles>();
+		
+		PlayableFiles mp3one = PlayableFiles.newBuilder().setFilename("audio 1").setType("mp3").build();
+		PlayableFiles mp3two = PlayableFiles.newBuilder().setFilename("audio 2").setType("mp3").build();
+		PlayableFiles mp4one = PlayableFiles.newBuilder().setFilename("video 1").setType("mp4").build();
+		PlayableFiles mp4two = PlayableFiles.newBuilder().setFilename("video 2").setType("mp4").build();
+		PlayableFiles mp3three = PlayableFiles.newBuilder().setFilename("audio 3").setType("mp3").build();
+		PlayableFiles mp3four = PlayableFiles.newBuilder().setFilename("audio 4").setType("mp3").build();
+		PlayableFiles mp4three = PlayableFiles.newBuilder().setFilename("video 3").setType("mp4").build();
+		PlayableFiles mp4four = PlayableFiles.newBuilder().setFilename("video 4").setType("mp4").build();
+		
+		
+		playablefiles.add(mp3one);
+		playablefiles.add(mp3two);
+		playablefiles.add(mp3three);
+		playablefiles.add(mp3four);
+		playablefiles.add(mp4one);
+		playablefiles.add(mp4two);
+		playablefiles.add(mp4three);
+		playablefiles.add(mp4four);
+		
+		for (PlayableFiles PLAY : playablefiles) {
+			if (!PLAY.getType().equals(request.getType())){
+				continue;
+			}
+			filename = PLAY.getFilename();
+			type = PLAY.getType();
+		
+			responseObserver.onNext(PLAY);
+			
+			System.out.println(PLAY);
 		}
+		responseObserver.onCompleted();
+		
+		
+	}
+	
+	
+}
 	
 	// Main launches the server from the command line
  	public static void main(String []args) throws Exception{

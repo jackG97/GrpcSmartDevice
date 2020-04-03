@@ -29,6 +29,11 @@ public final class SmartDeviceImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_smartdevice_Response_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smartdevice_Empty_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smartdevice_Empty_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -38,19 +43,18 @@ public final class SmartDeviceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013phone.proto\022\013smartdevice\032\033google/proto" +
-      "buf/empty.proto\"\035\n\013PowerStatus\022\016\n\006status" +
-      "\030\001 \001(\010\"9\n\010Contacts\022\014\n\004name\030\001 \001(\t\022\016\n\006numb" +
-      "er\030\002 \001(\t\022\017\n\007network\030\003 \001(\t\"\030\n\010Response\022\014\n" +
-      "\004text\030\001 \001(\t2\216\002\n\nsmartPhone\022>\n\010switchOn\022\026" +
-      ".google.protobuf.Empty\032\030.smartdevice.Pow" +
-      "erStatus\"\000\022?\n\tswitchOff\022\026.google.protobu" +
-      "f.Empty\032\030.smartdevice.PowerStatus\"\000\022A\n\014f" +
-      "indContacts\022\026.google.protobuf.Empty\032\025.sm" +
-      "artdevice.Contacts\"\0000\001\022<\n\naddContact\022\025.s" +
-      "martdevice.Contacts\032\025.smartdevice.Respon" +
-      "se\"\000B1\n\034com.jackgallaher.smartdeviceB\017Sm" +
-      "artDeviceImplP\001b\006proto3"
+      "\n\013phone.proto\022\013smartdevice\"\035\n\013PowerStatu" +
+      "s\022\016\n\006status\030\001 \001(\010\"9\n\010Contacts\022\014\n\004name\030\001 " +
+      "\001(\t\022\016\n\006number\030\002 \001(\t\022\017\n\007network\030\003 \001(\t\"\030\n\010" +
+      "Response\022\014\n\004text\030\001 \001(\t\"\007\n\005Empty2\202\002\n\nsmar" +
+      "tPhone\022:\n\010switchOn\022\022.smartdevice.Empty\032\030" +
+      ".smartdevice.PowerStatus\"\000\022;\n\tswitchOff\022" +
+      "\022.smartdevice.Empty\032\030.smartdevice.PowerS" +
+      "tatus\"\000\022=\n\014findContacts\022\022.smartdevice.Em" +
+      "pty\032\025.smartdevice.Contacts\"\0000\001\022<\n\naddCon" +
+      "tact\022\025.smartdevice.Contacts\032\025.smartdevic" +
+      "e.Response\"\000B1\n\034com.jackgallaher.smartde" +
+      "viceB\017SmartDeviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -63,7 +67,6 @@ public final class SmartDeviceImpl {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
     internal_static_smartdevice_PowerStatus_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -83,7 +86,12 @@ public final class SmartDeviceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_smartdevice_Response_descriptor,
         new java.lang.String[] { "Text", });
-    com.google.protobuf.EmptyProto.getDescriptor();
+    internal_static_smartdevice_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_smartdevice_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smartdevice_Empty_descriptor,
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

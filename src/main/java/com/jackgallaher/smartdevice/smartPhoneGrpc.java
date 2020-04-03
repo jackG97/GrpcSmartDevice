@@ -27,28 +27,28 @@ public final class smartPhoneGrpc {
   public static final String SERVICE_NAME = "smartdevice.smartPhone";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty,
       com.jackgallaher.smartdevice.PowerStatus> getSwitchOnMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOn",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartdevice.Empty.class,
       responseType = com.jackgallaher.smartdevice.PowerStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty,
       com.jackgallaher.smartdevice.PowerStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartdevice.PowerStatus> getSwitchOnMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty, com.jackgallaher.smartdevice.PowerStatus> getSwitchOnMethod;
     if ((getSwitchOnMethod = smartPhoneGrpc.getSwitchOnMethod) == null) {
       synchronized (smartPhoneGrpc.class) {
         if ((getSwitchOnMethod = smartPhoneGrpc.getSwitchOnMethod) == null) {
           smartPhoneGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartdevice.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartdevice.Empty, com.jackgallaher.smartdevice.PowerStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartPhone", "switchOn"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartdevice.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartdevice.PowerStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new smartPhoneMethodDescriptorSupplier("switchOn"))
@@ -59,28 +59,28 @@ public final class smartPhoneGrpc {
      return getSwitchOnMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty,
       com.jackgallaher.smartdevice.PowerStatus> getSwitchOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOff",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartdevice.Empty.class,
       responseType = com.jackgallaher.smartdevice.PowerStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty,
       com.jackgallaher.smartdevice.PowerStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartdevice.PowerStatus> getSwitchOffMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty, com.jackgallaher.smartdevice.PowerStatus> getSwitchOffMethod;
     if ((getSwitchOffMethod = smartPhoneGrpc.getSwitchOffMethod) == null) {
       synchronized (smartPhoneGrpc.class) {
         if ((getSwitchOffMethod = smartPhoneGrpc.getSwitchOffMethod) == null) {
           smartPhoneGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartdevice.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartdevice.Empty, com.jackgallaher.smartdevice.PowerStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartPhone", "switchOff"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartdevice.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartdevice.PowerStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new smartPhoneMethodDescriptorSupplier("switchOff"))
@@ -91,28 +91,28 @@ public final class smartPhoneGrpc {
      return getSwitchOffMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty,
       com.jackgallaher.smartdevice.Contacts> getFindContactsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findContacts",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartdevice.Empty.class,
       responseType = com.jackgallaher.smartdevice.Contacts.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty,
       com.jackgallaher.smartdevice.Contacts> getFindContactsMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartdevice.Contacts> getFindContactsMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartdevice.Empty, com.jackgallaher.smartdevice.Contacts> getFindContactsMethod;
     if ((getFindContactsMethod = smartPhoneGrpc.getFindContactsMethod) == null) {
       synchronized (smartPhoneGrpc.class) {
         if ((getFindContactsMethod = smartPhoneGrpc.getFindContactsMethod) == null) {
           smartPhoneGrpc.getFindContactsMethod = getFindContactsMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartdevice.Contacts>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartdevice.Empty, com.jackgallaher.smartdevice.Contacts>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartPhone", "findContacts"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartdevice.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartdevice.Contacts.getDefaultInstance()))
                   .setSchemaDescriptor(new smartPhoneMethodDescriptorSupplier("findContacts"))
@@ -184,21 +184,21 @@ public final class smartPhoneGrpc {
 
     /**
      */
-    public void switchOn(com.google.protobuf.Empty request,
+    public void switchOn(com.jackgallaher.smartdevice.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.PowerStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
     }
 
     /**
      */
-    public void switchOff(com.google.protobuf.Empty request,
+    public void switchOff(com.jackgallaher.smartdevice.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.PowerStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
     }
 
     /**
      */
-    public void findContacts(com.google.protobuf.Empty request,
+    public void findContacts(com.jackgallaher.smartdevice.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.Contacts> responseObserver) {
       asyncUnimplementedUnaryCall(getFindContactsMethod(), responseObserver);
     }
@@ -216,21 +216,21 @@ public final class smartPhoneGrpc {
             getSwitchOnMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartdevice.Empty,
                 com.jackgallaher.smartdevice.PowerStatus>(
                   this, METHODID_SWITCH_ON)))
           .addMethod(
             getSwitchOffMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartdevice.Empty,
                 com.jackgallaher.smartdevice.PowerStatus>(
                   this, METHODID_SWITCH_OFF)))
           .addMethod(
             getFindContactsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartdevice.Empty,
                 com.jackgallaher.smartdevice.Contacts>(
                   this, METHODID_FIND_CONTACTS)))
           .addMethod(
@@ -264,7 +264,7 @@ public final class smartPhoneGrpc {
 
     /**
      */
-    public void switchOn(com.google.protobuf.Empty request,
+    public void switchOn(com.jackgallaher.smartdevice.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.PowerStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
@@ -272,7 +272,7 @@ public final class smartPhoneGrpc {
 
     /**
      */
-    public void switchOff(com.google.protobuf.Empty request,
+    public void switchOff(com.jackgallaher.smartdevice.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.PowerStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
@@ -280,7 +280,7 @@ public final class smartPhoneGrpc {
 
     /**
      */
-    public void findContacts(com.google.protobuf.Empty request,
+    public void findContacts(com.jackgallaher.smartdevice.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.Contacts> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getFindContactsMethod(), getCallOptions()), request, responseObserver);
@@ -315,14 +315,14 @@ public final class smartPhoneGrpc {
 
     /**
      */
-    public com.jackgallaher.smartdevice.PowerStatus switchOn(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartdevice.PowerStatus switchOn(com.jackgallaher.smartdevice.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOnMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.jackgallaher.smartdevice.PowerStatus switchOff(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartdevice.PowerStatus switchOff(com.jackgallaher.smartdevice.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOffMethod(), getCallOptions(), request);
     }
@@ -330,7 +330,7 @@ public final class smartPhoneGrpc {
     /**
      */
     public java.util.Iterator<com.jackgallaher.smartdevice.Contacts> findContacts(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartdevice.Empty request) {
       return blockingServerStreamingCall(
           getChannel(), getFindContactsMethod(), getCallOptions(), request);
     }
@@ -364,7 +364,7 @@ public final class smartPhoneGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartdevice.PowerStatus> switchOn(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartdevice.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
     }
@@ -372,7 +372,7 @@ public final class smartPhoneGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartdevice.PowerStatus> switchOff(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartdevice.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
     }
@@ -409,15 +409,15 @@ public final class smartPhoneGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SWITCH_ON:
-          serviceImpl.switchOn((com.google.protobuf.Empty) request,
+          serviceImpl.switchOn((com.jackgallaher.smartdevice.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.PowerStatus>) responseObserver);
           break;
         case METHODID_SWITCH_OFF:
-          serviceImpl.switchOff((com.google.protobuf.Empty) request,
+          serviceImpl.switchOff((com.jackgallaher.smartdevice.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.PowerStatus>) responseObserver);
           break;
         case METHODID_FIND_CONTACTS:
-          serviceImpl.findContacts((com.google.protobuf.Empty) request,
+          serviceImpl.findContacts((com.jackgallaher.smartdevice.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartdevice.Contacts>) responseObserver);
           break;
         case METHODID_ADD_CONTACT:

@@ -27,28 +27,28 @@ public final class smartPdaGrpc {
   public static final String SERVICE_NAME = "smartdevice.smartPda";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Empty,
       com.jackgallaher.smartpda.PowerStatus> getSwitchOnMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOn",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartpda.Empty.class,
       responseType = com.jackgallaher.smartpda.PowerStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Empty,
       com.jackgallaher.smartpda.PowerStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartpda.PowerStatus> getSwitchOnMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Empty, com.jackgallaher.smartpda.PowerStatus> getSwitchOnMethod;
     if ((getSwitchOnMethod = smartPdaGrpc.getSwitchOnMethod) == null) {
       synchronized (smartPdaGrpc.class) {
         if ((getSwitchOnMethod = smartPdaGrpc.getSwitchOnMethod) == null) {
           smartPdaGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartpda.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartpda.Empty, com.jackgallaher.smartpda.PowerStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartPda", "switchOn"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartpda.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartpda.PowerStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new smartPdaMethodDescriptorSupplier("switchOn"))
@@ -59,28 +59,28 @@ public final class smartPdaGrpc {
      return getSwitchOnMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Empty,
       com.jackgallaher.smartpda.PowerStatus> getSwitchOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOff",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartpda.Empty.class,
       responseType = com.jackgallaher.smartpda.PowerStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Empty,
       com.jackgallaher.smartpda.PowerStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartpda.PowerStatus> getSwitchOffMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Empty, com.jackgallaher.smartpda.PowerStatus> getSwitchOffMethod;
     if ((getSwitchOffMethod = smartPdaGrpc.getSwitchOffMethod) == null) {
       synchronized (smartPdaGrpc.class) {
         if ((getSwitchOffMethod = smartPdaGrpc.getSwitchOffMethod) == null) {
           smartPdaGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartpda.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartpda.Empty, com.jackgallaher.smartpda.PowerStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "smartdevice.smartPda", "switchOff"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartpda.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartpda.PowerStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new smartPdaMethodDescriptorSupplier("switchOff"))
@@ -155,6 +155,38 @@ public final class smartPdaGrpc {
      return getGetToDoListMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Type,
+      com.jackgallaher.smartpda.PlayableFiles> getGetMP3AndMP4FilesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getMP3AndMP4Files",
+      requestType = com.jackgallaher.smartpda.Type.class,
+      responseType = com.jackgallaher.smartpda.PlayableFiles.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Type,
+      com.jackgallaher.smartpda.PlayableFiles> getGetMP3AndMP4FilesMethod() {
+    io.grpc.MethodDescriptor<com.jackgallaher.smartpda.Type, com.jackgallaher.smartpda.PlayableFiles> getGetMP3AndMP4FilesMethod;
+    if ((getGetMP3AndMP4FilesMethod = smartPdaGrpc.getGetMP3AndMP4FilesMethod) == null) {
+      synchronized (smartPdaGrpc.class) {
+        if ((getGetMP3AndMP4FilesMethod = smartPdaGrpc.getGetMP3AndMP4FilesMethod) == null) {
+          smartPdaGrpc.getGetMP3AndMP4FilesMethod = getGetMP3AndMP4FilesMethod = 
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartpda.Type, com.jackgallaher.smartpda.PlayableFiles>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "smartdevice.smartPda", "getMP3AndMP4Files"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.jackgallaher.smartpda.Type.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.jackgallaher.smartpda.PlayableFiles.getDefaultInstance()))
+                  .setSchemaDescriptor(new smartPdaMethodDescriptorSupplier("getMP3AndMP4Files"))
+                  .build();
+          }
+        }
+     }
+     return getGetMP3AndMP4FilesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -184,14 +216,14 @@ public final class smartPdaGrpc {
 
     /**
      */
-    public void switchOn(com.google.protobuf.Empty request,
+    public void switchOn(com.jackgallaher.smartpda.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PowerStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
     }
 
     /**
      */
-    public void switchOff(com.google.protobuf.Empty request,
+    public void switchOff(com.jackgallaher.smartpda.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PowerStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
     }
@@ -210,20 +242,27 @@ public final class smartPdaGrpc {
       return asyncUnimplementedStreamingCall(getGetToDoListMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getMP3AndMP4Files(com.jackgallaher.smartpda.Type request,
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PlayableFiles> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMP3AndMP4FilesMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSwitchOnMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartpda.Empty,
                 com.jackgallaher.smartpda.PowerStatus>(
                   this, METHODID_SWITCH_ON)))
           .addMethod(
             getSwitchOffMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartpda.Empty,
                 com.jackgallaher.smartpda.PowerStatus>(
                   this, METHODID_SWITCH_OFF)))
           .addMethod(
@@ -240,6 +279,13 @@ public final class smartPdaGrpc {
                 com.jackgallaher.smartpda.Day,
                 com.jackgallaher.smartpda.ToDoList>(
                   this, METHODID_GET_TO_DO_LIST)))
+          .addMethod(
+            getGetMP3AndMP4FilesMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.jackgallaher.smartpda.Type,
+                com.jackgallaher.smartpda.PlayableFiles>(
+                  this, METHODID_GET_MP3AND_MP4FILES)))
           .build();
     }
   }
@@ -264,7 +310,7 @@ public final class smartPdaGrpc {
 
     /**
      */
-    public void switchOn(com.google.protobuf.Empty request,
+    public void switchOn(com.jackgallaher.smartpda.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PowerStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
@@ -272,7 +318,7 @@ public final class smartPdaGrpc {
 
     /**
      */
-    public void switchOff(com.google.protobuf.Empty request,
+    public void switchOff(com.jackgallaher.smartpda.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PowerStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
@@ -292,6 +338,14 @@ public final class smartPdaGrpc {
         io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.ToDoList> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getGetToDoListMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public void getMP3AndMP4Files(com.jackgallaher.smartpda.Type request,
+        io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PlayableFiles> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetMP3AndMP4FilesMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -315,14 +369,14 @@ public final class smartPdaGrpc {
 
     /**
      */
-    public com.jackgallaher.smartpda.PowerStatus switchOn(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartpda.PowerStatus switchOn(com.jackgallaher.smartpda.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOnMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.jackgallaher.smartpda.PowerStatus switchOff(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartpda.PowerStatus switchOff(com.jackgallaher.smartpda.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOffMethod(), getCallOptions(), request);
     }
@@ -333,6 +387,14 @@ public final class smartPdaGrpc {
         com.jackgallaher.smartpda.Date request) {
       return blockingServerStreamingCall(
           getChannel(), getGetAppointmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.jackgallaher.smartpda.PlayableFiles> getMP3AndMP4Files(
+        com.jackgallaher.smartpda.Type request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetMP3AndMP4FilesMethod(), getCallOptions(), request);
     }
   }
 
@@ -357,7 +419,7 @@ public final class smartPdaGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartpda.PowerStatus> switchOn(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartpda.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
     }
@@ -365,7 +427,7 @@ public final class smartPdaGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartpda.PowerStatus> switchOff(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartpda.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
     }
@@ -374,7 +436,8 @@ public final class smartPdaGrpc {
   private static final int METHODID_SWITCH_ON = 0;
   private static final int METHODID_SWITCH_OFF = 1;
   private static final int METHODID_GET_APPOINTMENTS = 2;
-  private static final int METHODID_GET_TO_DO_LIST = 3;
+  private static final int METHODID_GET_MP3AND_MP4FILES = 3;
+  private static final int METHODID_GET_TO_DO_LIST = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -394,16 +457,20 @@ public final class smartPdaGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SWITCH_ON:
-          serviceImpl.switchOn((com.google.protobuf.Empty) request,
+          serviceImpl.switchOn((com.jackgallaher.smartpda.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PowerStatus>) responseObserver);
           break;
         case METHODID_SWITCH_OFF:
-          serviceImpl.switchOff((com.google.protobuf.Empty) request,
+          serviceImpl.switchOff((com.jackgallaher.smartpda.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PowerStatus>) responseObserver);
           break;
         case METHODID_GET_APPOINTMENTS:
           serviceImpl.getAppointments((com.jackgallaher.smartpda.Date) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.Appointment>) responseObserver);
+          break;
+        case METHODID_GET_MP3AND_MP4FILES:
+          serviceImpl.getMP3AndMP4Files((com.jackgallaher.smartpda.Type) request,
+              (io.grpc.stub.StreamObserver<com.jackgallaher.smartpda.PlayableFiles>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -473,6 +540,7 @@ public final class smartPdaGrpc {
               .addMethod(getSwitchOffMethod())
               .addMethod(getGetAppointmentsMethod())
               .addMethod(getGetToDoListMethod())
+              .addMethod(getGetMP3AndMP4FilesMethod())
               .build();
         }
       }

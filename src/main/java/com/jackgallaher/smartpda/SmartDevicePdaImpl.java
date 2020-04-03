@@ -39,6 +39,21 @@ public final class SmartDevicePdaImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_smartdevice_ToDoList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smartdevice_Empty_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smartdevice_Empty_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smartdevice_Type_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smartdevice_Type_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smartdevice_PlayableFiles_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smartdevice_PlayableFiles_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48,21 +63,24 @@ public final class SmartDevicePdaImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tpda.proto\022\013smartdevice\032\033google/protobu" +
-      "f/empty.proto\"\035\n\013PowerStatus\022\016\n\006status\030\001" +
-      " \001(\010\"\024\n\004Date\022\014\n\004date\030\001 \001(\t\"F\n\013Appointmen" +
-      "t\022\r\n\005title\030\001 \001(\t\022\014\n\004note\030\002 \001(\t\022\014\n\004time\030\003" +
-      " \001(\t\022\014\n\004date\030\004 \001(\t\"\022\n\003Day\022\013\n\003day\030\001 \001(\t\"%" +
-      "\n\010ToDoList\022\013\n\003day\030\001 \001(\t\022\014\n\004todo\030\002 \001(\t2\215\002" +
-      "\n\010smartPda\022>\n\010switchOn\022\026.google.protobuf" +
-      ".Empty\032\030.smartdevice.PowerStatus\"\000\022?\n\tsw" +
-      "itchOff\022\026.google.protobuf.Empty\032\030.smartd" +
-      "evice.PowerStatus\"\000\022B\n\017getAppointments\022\021" +
-      ".smartdevice.Date\032\030.smartdevice.Appointm" +
-      "ent\"\0000\001\022<\n\013getToDoList\022\020.smartdevice.Day" +
-      "\032\025.smartdevice.ToDoList\"\000(\0010\001B1\n\031com.jac" +
-      "kgallaher.smartpdaB\022SmartDevicePdaImplP\001" +
-      "b\006proto3"
+      "\n\tpda.proto\022\013smartdevice\"\035\n\013PowerStatus\022" +
+      "\016\n\006status\030\001 \001(\010\"\024\n\004Date\022\014\n\004date\030\001 \001(\t\"F\n" +
+      "\013Appointment\022\r\n\005title\030\001 \001(\t\022\014\n\004note\030\002 \001(" +
+      "\t\022\014\n\004time\030\003 \001(\t\022\014\n\004date\030\004 \001(\t\"\022\n\003Day\022\013\n\003" +
+      "day\030\001 \001(\t\"%\n\010ToDoList\022\013\n\003day\030\001 \001(\t\022\014\n\004to" +
+      "do\030\002 \001(\t\"\007\n\005Empty\"\024\n\004Type\022\014\n\004type\030\002 \001(\t\"" +
+      "/\n\rPlayableFiles\022\020\n\010filename\030\001 \001(\t\022\014\n\004ty" +
+      "pe\030\002 \001(\t2\315\002\n\010smartPda\022:\n\010switchOn\022\022.smar" +
+      "tdevice.Empty\032\030.smartdevice.PowerStatus\"" +
+      "\000\022;\n\tswitchOff\022\022.smartdevice.Empty\032\030.sma" +
+      "rtdevice.PowerStatus\"\000\022B\n\017getAppointment" +
+      "s\022\021.smartdevice.Date\032\030.smartdevice.Appoi" +
+      "ntment\"\0000\001\022<\n\013getToDoList\022\020.smartdevice." +
+      "Day\032\025.smartdevice.ToDoList\"\000(\0010\001\022F\n\021getM" +
+      "P3AndMP4Files\022\021.smartdevice.Type\032\032.smart" +
+      "device.PlayableFiles\"\0000\001B1\n\031com.jackgall" +
+      "aher.smartpdaB\022SmartDevicePdaImplP\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -75,7 +93,6 @@ public final class SmartDevicePdaImpl {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
     internal_static_smartdevice_PowerStatus_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -107,7 +124,24 @@ public final class SmartDevicePdaImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_smartdevice_ToDoList_descriptor,
         new java.lang.String[] { "Day", "Todo", });
-    com.google.protobuf.EmptyProto.getDescriptor();
+    internal_static_smartdevice_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_smartdevice_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smartdevice_Empty_descriptor,
+        new java.lang.String[] { });
+    internal_static_smartdevice_Type_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_smartdevice_Type_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smartdevice_Type_descriptor,
+        new java.lang.String[] { "Type", });
+    internal_static_smartdevice_PlayableFiles_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_smartdevice_PlayableFiles_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smartdevice_PlayableFiles_descriptor,
+        new java.lang.String[] { "Filename", "Type", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
