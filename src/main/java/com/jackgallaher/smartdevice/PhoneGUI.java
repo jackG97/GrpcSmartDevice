@@ -21,7 +21,7 @@ import static java.lang.Thread.sleep;
 public class PhoneGUI extends javax.swing.JFrame {
 
 	
-	public SmartDeviceServer server;
+	public SmartDeviceClient client;
 	
 
 	/**
@@ -38,9 +38,9 @@ public class PhoneGUI extends javax.swing.JFrame {
 	}
 	
 	
-	public PhoneGUI(SmartDeviceServer server) {
+	public PhoneGUI(SmartDeviceClient client) {
 		this();
-		this.server = server;
+		this.client = client;
 	}
 	
 
@@ -194,9 +194,9 @@ public static void main(String args[]) {
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
         java.util.logging.Logger.getLogger(PhoneGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
-    //</editor-fold>
+    
 
-    /* Create and display the form */
+    // Create and display the form 
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
             new PhoneGUI().setVisible(true);
