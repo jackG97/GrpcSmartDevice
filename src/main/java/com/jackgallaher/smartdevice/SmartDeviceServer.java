@@ -96,7 +96,7 @@ public class SmartDeviceServer  {
 	    
 	    //method is used to retrieve contacts on phone from the arraylist
 	    public void findContacts(Empty request, io.grpc.stub.StreamObserver<Contacts> responseObserver) {
-	    	
+	    	//arraylist of contacts
 	    	 contacts = new ArrayList<Contacts>();
 	            Contacts first = Contacts.newBuilder().setName("James").setNumber("0878923456").setNetwork("Three").build();
 	            Contacts second = Contacts.newBuilder().setName("Ray").setNumber("0867864563").setNetwork("Three").build();

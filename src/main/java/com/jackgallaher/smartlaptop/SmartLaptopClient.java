@@ -107,6 +107,7 @@ public class SmartLaptopClient implements ServiceObserver{
 	//client side for for charging the laptop
 	public static void startCharging() {
 		System.out.println("Laptop has started charging");
+		//error handling using try catch
 		try {
 			new Thread() {
 			public void run() {
@@ -130,6 +131,7 @@ public class SmartLaptopClient implements ServiceObserver{
 	
 	//client side for retrieving the status of the laptop
 	public static void laptopStatus() {
+		//error handling using try catch
 		try {
 			Empty request = Empty.newBuilder().build();
 			PowerStatus power_status = blockstub.laptopStatus(request);

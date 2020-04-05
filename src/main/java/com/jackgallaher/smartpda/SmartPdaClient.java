@@ -77,6 +77,7 @@ public class SmartPdaClient implements ServiceObserver {
 	//client side for switching on pda
 	public static void switchOn() {
 		System.out.println("The Pda is turning on");
+		//error handling using try catch
 		try {
 			Empty request = Empty.newBuilder().build();
 			PowerStatus power_status = blockstub.switchOn(request);
@@ -89,6 +90,7 @@ public class SmartPdaClient implements ServiceObserver {
 	//client side for switching off pda
 	public static void switchOff() {
 		System.out.println("The Pda is turning off");
+		//error handling using try catch
 		try {
 			Empty request = Empty.newBuilder().build();
 			PowerStatus power_status = blockstub.switchOff(request);
@@ -104,7 +106,7 @@ public class SmartPdaClient implements ServiceObserver {
 		
 		Date request = Date.newBuilder().setDate("23/06/20").build();
 		Iterator<Appointment> appointments;	
-		
+		//error handling using try catch
 		try {
 			appointments = blockstub.getAppointments(request);
 			for (int i = 1; appointments.hasNext(); i++) {
@@ -119,7 +121,7 @@ public class SmartPdaClient implements ServiceObserver {
 		}
 	}
 	
-	
+	//function does not work
 /*	public static void getToDoList() {
 		Day request = Day.newBuilder().setDay("Monday").build();
 		Iterator<ToDoList> todolist;	
@@ -137,12 +139,12 @@ public class SmartPdaClient implements ServiceObserver {
 		}
 	}*/
 	
-	//client side for retrieving playable files. user requests type and gets backs the file and that file type
+	//client side for retrieving playable files. user requests type (.i.e mp3) and gets backs the file and that file type
 	public static void getMP3AndMP4Files() {
 		Type request = Type.newBuilder().setType("mp3").build();
 		Type request1 = Type.newBuilder().setType("mp4").build();
 		Iterator<PlayableFiles> playablefiles;	
-		
+		//error handling using try catch
 		try {
 			playablefiles = blockstub.getMP3AndMP4Files(request);
 			playablefiles = blockstub.getMP3AndMP4Files(request1);
@@ -180,7 +182,7 @@ public class SmartPdaClient implements ServiceObserver {
 		
 		client.getMP3AndMP4Files();
 		
-		//client.getToDoList();
+		//client.getToDoList(); not functioning
 	}
 	
 	

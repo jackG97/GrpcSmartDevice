@@ -101,6 +101,7 @@ public class SmartPdaServer {
 	
 	//this method uses server streaming. the user requests a date and the server responds with either an appointment for that date or nothing on that date
 	public void getAppointments(Date request, io.grpc.stub.StreamObserver<Appointment> responseObserver) {
+		//arraylist for appointments
 		appointments = new ArrayList<Appointment>();
 		Appointment facebookmeeting = Appointment.newBuilder().setTitle("Mark meeting").setNote("New application features meeting").setTime("12:00pm").setDate("23/02/20").build();
 		Appointment teamsetup = Appointment.newBuilder().setTitle("Team setup meeting").setNote("orgainising new team for level 2 office").setTime("1:00pm").setDate("12/03/20").build();
@@ -114,6 +115,8 @@ public class SmartPdaServer {
 		
 		System.out.println(request.getDate());
 		
+		// if request date does not equal appointment date within the arraylist the it will send back "Nothing today"
+		// if request date equals date in arraylist then it will send back appointment details
 		for (Appointment APPOINTMENT : appointments) {
 			if (!APPOINTMENT.getDate().equals(request.getDate())){
 				System.out.println("Nothing today");
@@ -133,7 +136,7 @@ public class SmartPdaServer {
 	
 	//this method is used as Bidirectional streaming where the user can request multiple days and get back multiple to do list activities on those days selected.
 	public void getToDoList(StreamObserver<Day> request, io.grpc.stub.StreamObserver<ToDoList> responseObserver) {
-		
+		//arraylist for to do list
 			todolist = new ArrayList<ToDoList>();
 			
 			ToDoList pickupcar = ToDoList.newBuilder().setDay("Monday").setTodo("Pick up car from gargage").build();
@@ -155,6 +158,8 @@ public class SmartPdaServer {
 			todolist.add(speaktomanager);
 			todolist.add(organisefund);
 			
+			
+			//if the stream  request of days is equal to a day in the arraylist it will send back the that day or days and its to do list item
 			for (ToDoList TODO : todolist) {
 				if (TODO.getDay().equals(((DayOrBuilder) request).getDay())){
 					continue;
@@ -172,6 +177,7 @@ public class SmartPdaServer {
 	
 	//this method uses server streaming. the user requests an MP type (mp3 or mp4) and the server responds with either the playable files for that type requested.
 	public void getMP3AndMP4Files(Type request, io.grpc.stub.StreamObserver<PlayableFiles> responseObserver) {
+		//arraylist for playables files and file types
 		playablefiles = new ArrayList<PlayableFiles>();
 		
 		PlayableFiles mp3one = PlayableFiles.newBuilder().setFilename("audio 1").setType("mp3").build();
@@ -193,6 +199,7 @@ public class SmartPdaServer {
 		playablefiles.add(mp4three);
 		playablefiles.add(mp4four);
 		
+		//if the type request is either mp3 or mp4, it will send back those files that correspond to that type.
 		for (PlayableFiles PLAY : playablefiles) {
 			if (!PLAY.getType().equals(request.getType())){
 				continue;

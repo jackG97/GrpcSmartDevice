@@ -95,7 +95,7 @@ public class SmartLaptopServer {
            response.onCompleted();           
        }
 	    
-	    //this method is used to charge laptop. it uses server streaming where each stream represents the battery life of the laptop increases by 10%
+	    //this method is used to charge laptop. it uses server streaming where each stream represents the battery life of the laptop increaseing by 10%
 	    //the final stream is the output stating the laptop is fully charged.
 	      @Override
 	        public void startCharging(Empty request, io.grpc.stub.StreamObserver<PowerStatus> responseObserver) 

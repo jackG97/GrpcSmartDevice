@@ -15,7 +15,9 @@ public class jmDNSServiceTracker implements ServiceListener {
 	ServiceObserver observer;
 	
 	private jmDNSServiceTracker() {
-		try {// Register a service
+		//error handling using try catch
+		try {
+			// Register a service
 			jmdns = JmDNS.create(InetAddress.getLocalHost());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -29,7 +31,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 		return instance;
 	}
 	
-	
+	//
 	public void register(ServiceObserver observer) {
 		this.observer = observer;
 		for (String s : observer.serviceInterests()) {
@@ -40,9 +42,11 @@ public class jmDNSServiceTracker implements ServiceListener {
 	
 	
 	public void end() {
+		//error handling using try catch
 		try {
 			jmdns.close();
 		} catch (IOException e) {
+			//getName method returns the name of this Logger instance
 			Logger.getLogger(jmDNSServiceTracker.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
@@ -58,6 +62,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 	}
 
 	@Override
+	//service has disappeared
 	public void serviceRemoved(ServiceEvent event) {
 		// TODO Auto-generated method stub
 		

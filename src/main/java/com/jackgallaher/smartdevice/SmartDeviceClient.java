@@ -105,6 +105,7 @@ public class SmartDeviceClient implements ServiceObserver {
 			Empty request = Empty.newBuilder().build();
 			
 			StreamObserver<Contacts> responseObserver = new StreamObserver<Contacts>() {
+				//arraylist of contacts
 				Contacts first = Contacts.newBuilder().setName("James").setNumber("0878923456").setNetwork("Three").build();
 	            Contacts second = Contacts.newBuilder().setName("Ray").setNumber("0867864563").setNetwork("Three").build();
 	            Contacts third = Contacts.newBuilder().setName("Rachel").setNumber("0896753487").setNetwork("Virgin Media").build();
