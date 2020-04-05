@@ -27,12 +27,6 @@ public class JmDNSRegistrationHelper {
     	}
     }
     
-    public static int findFreePort() throws IOException {
-    	ServerSocket server = new ServerSocket(0);
-    	int port = server.getLocalPort();
-    	server.close();
-    	return port;
-    }
     
     // Unregisters services
     public void Register() {

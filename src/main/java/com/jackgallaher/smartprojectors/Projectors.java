@@ -1041,6 +1041,418 @@ public final class Projectors {
 
   }
 
+  public interface EmptyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jackgallaher.smartprojectors.Empty)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code com.jackgallaher.smartprojectors.Empty}
+   */
+  public  static final class Empty extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jackgallaher.smartprojectors.Empty)
+      EmptyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Empty.newBuilder() to construct.
+    private Empty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Empty() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Empty(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jackgallaher.smartprojectors.Projectors.internal_static_com_jackgallaher_smartprojectors_Empty_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jackgallaher.smartprojectors.Projectors.internal_static_com_jackgallaher_smartprojectors_Empty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jackgallaher.smartprojectors.Projectors.Empty.class, com.jackgallaher.smartprojectors.Projectors.Empty.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jackgallaher.smartprojectors.Projectors.Empty)) {
+        return super.equals(obj);
+      }
+      com.jackgallaher.smartprojectors.Projectors.Empty other = (com.jackgallaher.smartprojectors.Projectors.Empty) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jackgallaher.smartprojectors.Projectors.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jackgallaher.smartprojectors.Projectors.Empty prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.jackgallaher.smartprojectors.Empty}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jackgallaher.smartprojectors.Empty)
+        com.jackgallaher.smartprojectors.Projectors.EmptyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jackgallaher.smartprojectors.Projectors.internal_static_com_jackgallaher_smartprojectors_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jackgallaher.smartprojectors.Projectors.internal_static_com_jackgallaher_smartprojectors_Empty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jackgallaher.smartprojectors.Projectors.Empty.class, com.jackgallaher.smartprojectors.Projectors.Empty.Builder.class);
+      }
+
+      // Construct using com.jackgallaher.smartprojectors.Projectors.Empty.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jackgallaher.smartprojectors.Projectors.internal_static_com_jackgallaher_smartprojectors_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jackgallaher.smartprojectors.Projectors.Empty getDefaultInstanceForType() {
+        return com.jackgallaher.smartprojectors.Projectors.Empty.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jackgallaher.smartprojectors.Projectors.Empty build() {
+        com.jackgallaher.smartprojectors.Projectors.Empty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jackgallaher.smartprojectors.Projectors.Empty buildPartial() {
+        com.jackgallaher.smartprojectors.Projectors.Empty result = new com.jackgallaher.smartprojectors.Projectors.Empty(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jackgallaher.smartprojectors.Projectors.Empty) {
+          return mergeFrom((com.jackgallaher.smartprojectors.Projectors.Empty)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jackgallaher.smartprojectors.Projectors.Empty other) {
+        if (other == com.jackgallaher.smartprojectors.Projectors.Empty.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jackgallaher.smartprojectors.Projectors.Empty parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jackgallaher.smartprojectors.Projectors.Empty) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jackgallaher.smartprojectors.Empty)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jackgallaher.smartprojectors.Empty)
+    private static final com.jackgallaher.smartprojectors.Projectors.Empty DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jackgallaher.smartprojectors.Projectors.Empty();
+    }
+
+    public static com.jackgallaher.smartprojectors.Projectors.Empty getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Empty>
+        PARSER = new com.google.protobuf.AbstractParser<Empty>() {
+      @java.lang.Override
+      public Empty parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Empty(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Empty> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Empty> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jackgallaher.smartprojectors.Projectors.Empty getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_jackgallaher_smartprojectors_PowerStatus_descriptor;
   private static final 
@@ -1051,6 +1463,11 @@ public final class Projectors {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_jackgallaher_smartprojectors_Response_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jackgallaher_smartprojectors_Empty_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jackgallaher_smartprojectors_Empty_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1061,19 +1478,20 @@ public final class Projectors {
   static {
     java.lang.String[] descriptorData = {
       "\n\020projectors.proto\022 com.jackgallaher.sma" +
-      "rtprojectors\032\033google/protobuf/empty.prot" +
-      "o\"\035\n\013PowerStatus\022\016\n\006status\030\001 \001(\010\"\030\n\010Resp" +
-      "onse\022\014\n\004text\030\001 \001(\t2\341\002\n\017smartProjectors\022S" +
-      "\n\010switchOn\022\026.google.protobuf.Empty\032-.com" +
-      ".jackgallaher.smartprojectors.PowerStatu" +
-      "s\"\000\022T\n\tswitchOff\022\026.google.protobuf.Empty" +
-      "\032-.com.jackgallaher.smartprojectors.Powe" +
-      "rStatus\"\000\022Q\n\tinputHDMI\022\026.google.protobuf" +
-      ".Empty\032*.com.jackgallaher.smartprojector" +
-      "s.Response\"\000\022P\n\010inputVGA\022\026.google.protob" +
-      "uf.Empty\032*.com.jackgallaher.smartproject" +
-      "ors.Response\"\000B\022\252\002\017smartprojectorsb\006prot" +
-      "o3"
+      "rtprojectors\"\035\n\013PowerStatus\022\016\n\006status\030\001 " +
+      "\001(\010\"\030\n\010Response\022\014\n\004text\030\001 \001(\t\"\007\n\005Empty2\245" +
+      "\003\n\017smartProjectors\022d\n\010switchOn\022\'.com.jac" +
+      "kgallaher.smartprojectors.Empty\032-.com.ja" +
+      "ckgallaher.smartprojectors.PowerStatus\"\000" +
+      "\022e\n\tswitchOff\022\'.com.jackgallaher.smartpr" +
+      "ojectors.Empty\032-.com.jackgallaher.smartp" +
+      "rojectors.PowerStatus\"\000\022b\n\tinputHDMI\022\'.c" +
+      "om.jackgallaher.smartprojectors.Empty\032*." +
+      "com.jackgallaher.smartprojectors.Respons" +
+      "e\"\000\022a\n\010inputVGA\022\'.com.jackgallaher.smart" +
+      "projectors.Empty\032*.com.jackgallaher.smar" +
+      "tprojectors.Response\"\000B\022\252\002\017smartprojecto" +
+      "rsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1086,7 +1504,6 @@ public final class Projectors {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
     internal_static_com_jackgallaher_smartprojectors_PowerStatus_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1100,7 +1517,12 @@ public final class Projectors {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jackgallaher_smartprojectors_Response_descriptor,
         new java.lang.String[] { "Text", });
-    com.google.protobuf.EmptyProto.getDescriptor();
+    internal_static_com_jackgallaher_smartprojectors_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_jackgallaher_smartprojectors_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jackgallaher_smartprojectors_Empty_descriptor,
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

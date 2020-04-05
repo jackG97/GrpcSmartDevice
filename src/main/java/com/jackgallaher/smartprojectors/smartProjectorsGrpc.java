@@ -27,28 +27,28 @@ public final class smartProjectorsGrpc {
   public static final String SERVICE_NAME = "com.jackgallaher.smartprojectors.smartProjectors";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOnMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOn",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartprojectors.Projectors.Empty.class,
       responseType = com.jackgallaher.smartprojectors.Projectors.PowerStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOnMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOnMethod;
     if ((getSwitchOnMethod = smartProjectorsGrpc.getSwitchOnMethod) == null) {
       synchronized (smartProjectorsGrpc.class) {
         if ((getSwitchOnMethod = smartProjectorsGrpc.getSwitchOnMethod) == null) {
           smartProjectorsGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "com.jackgallaher.smartprojectors.smartProjectors", "switchOn"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartprojectors.Projectors.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartprojectors.Projectors.PowerStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new smartProjectorsMethodDescriptorSupplier("switchOn"))
@@ -59,28 +59,28 @@ public final class smartProjectorsGrpc {
      return getSwitchOnMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOffMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "switchOff",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartprojectors.Projectors.Empty.class,
       responseType = com.jackgallaher.smartprojectors.Projectors.PowerStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOffMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus> getSwitchOffMethod;
     if ((getSwitchOffMethod = smartProjectorsGrpc.getSwitchOffMethod) == null) {
       synchronized (smartProjectorsGrpc.class) {
         if ((getSwitchOffMethod = smartProjectorsGrpc.getSwitchOffMethod) == null) {
           smartProjectorsGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.PowerStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "com.jackgallaher.smartprojectors.smartProjectors", "switchOff"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartprojectors.Projectors.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartprojectors.Projectors.PowerStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new smartProjectorsMethodDescriptorSupplier("switchOff"))
@@ -91,28 +91,28 @@ public final class smartProjectorsGrpc {
      return getSwitchOffMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.Response> getInputHDMIMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "inputHDMI",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartprojectors.Projectors.Empty.class,
       responseType = com.jackgallaher.smartprojectors.Projectors.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.Response> getInputHDMIMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.Response> getInputHDMIMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.Response> getInputHDMIMethod;
     if ((getInputHDMIMethod = smartProjectorsGrpc.getInputHDMIMethod) == null) {
       synchronized (smartProjectorsGrpc.class) {
         if ((getInputHDMIMethod = smartProjectorsGrpc.getInputHDMIMethod) == null) {
           smartProjectorsGrpc.getInputHDMIMethod = getInputHDMIMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.Response>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "com.jackgallaher.smartprojectors.smartProjectors", "inputHDMI"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartprojectors.Projectors.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartprojectors.Projectors.Response.getDefaultInstance()))
                   .setSchemaDescriptor(new smartProjectorsMethodDescriptorSupplier("inputHDMI"))
@@ -123,28 +123,28 @@ public final class smartProjectorsGrpc {
      return getInputHDMIMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.Response> getInputVGAMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "inputVGA",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.jackgallaher.smartprojectors.Projectors.Empty.class,
       responseType = com.jackgallaher.smartprojectors.Projectors.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty,
       com.jackgallaher.smartprojectors.Projectors.Response> getInputVGAMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.Response> getInputVGAMethod;
+    io.grpc.MethodDescriptor<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.Response> getInputVGAMethod;
     if ((getInputVGAMethod = smartProjectorsGrpc.getInputVGAMethod) == null) {
       synchronized (smartProjectorsGrpc.class) {
         if ((getInputVGAMethod = smartProjectorsGrpc.getInputVGAMethod) == null) {
           smartProjectorsGrpc.getInputVGAMethod = getInputVGAMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.jackgallaher.smartprojectors.Projectors.Response>newBuilder()
+              io.grpc.MethodDescriptor.<com.jackgallaher.smartprojectors.Projectors.Empty, com.jackgallaher.smartprojectors.Projectors.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "com.jackgallaher.smartprojectors.smartProjectors", "inputVGA"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.jackgallaher.smartprojectors.Projectors.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.jackgallaher.smartprojectors.Projectors.Response.getDefaultInstance()))
                   .setSchemaDescriptor(new smartProjectorsMethodDescriptorSupplier("inputVGA"))
@@ -184,28 +184,28 @@ public final class smartProjectorsGrpc {
 
     /**
      */
-    public void switchOn(com.google.protobuf.Empty request,
+    public void switchOn(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.PowerStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
     }
 
     /**
      */
-    public void switchOff(com.google.protobuf.Empty request,
+    public void switchOff(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.PowerStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
     }
 
     /**
      */
-    public void inputHDMI(com.google.protobuf.Empty request,
+    public void inputHDMI(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.Response> responseObserver) {
       asyncUnimplementedUnaryCall(getInputHDMIMethod(), responseObserver);
     }
 
     /**
      */
-    public void inputVGA(com.google.protobuf.Empty request,
+    public void inputVGA(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.Response> responseObserver) {
       asyncUnimplementedUnaryCall(getInputVGAMethod(), responseObserver);
     }
@@ -216,28 +216,28 @@ public final class smartProjectorsGrpc {
             getSwitchOnMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartprojectors.Projectors.Empty,
                 com.jackgallaher.smartprojectors.Projectors.PowerStatus>(
                   this, METHODID_SWITCH_ON)))
           .addMethod(
             getSwitchOffMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartprojectors.Projectors.Empty,
                 com.jackgallaher.smartprojectors.Projectors.PowerStatus>(
                   this, METHODID_SWITCH_OFF)))
           .addMethod(
             getInputHDMIMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartprojectors.Projectors.Empty,
                 com.jackgallaher.smartprojectors.Projectors.Response>(
                   this, METHODID_INPUT_HDMI)))
           .addMethod(
             getInputVGAMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.protobuf.Empty,
+                com.jackgallaher.smartprojectors.Projectors.Empty,
                 com.jackgallaher.smartprojectors.Projectors.Response>(
                   this, METHODID_INPUT_VGA)))
           .build();
@@ -264,7 +264,7 @@ public final class smartProjectorsGrpc {
 
     /**
      */
-    public void switchOn(com.google.protobuf.Empty request,
+    public void switchOn(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.PowerStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
@@ -272,7 +272,7 @@ public final class smartProjectorsGrpc {
 
     /**
      */
-    public void switchOff(com.google.protobuf.Empty request,
+    public void switchOff(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.PowerStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
@@ -280,7 +280,7 @@ public final class smartProjectorsGrpc {
 
     /**
      */
-    public void inputHDMI(com.google.protobuf.Empty request,
+    public void inputHDMI(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.Response> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getInputHDMIMethod(), getCallOptions()), request, responseObserver);
@@ -288,7 +288,7 @@ public final class smartProjectorsGrpc {
 
     /**
      */
-    public void inputVGA(com.google.protobuf.Empty request,
+    public void inputVGA(com.jackgallaher.smartprojectors.Projectors.Empty request,
         io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.Response> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getInputVGAMethod(), getCallOptions()), request, responseObserver);
@@ -315,28 +315,28 @@ public final class smartProjectorsGrpc {
 
     /**
      */
-    public com.jackgallaher.smartprojectors.Projectors.PowerStatus switchOn(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartprojectors.Projectors.PowerStatus switchOn(com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOnMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.jackgallaher.smartprojectors.Projectors.PowerStatus switchOff(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartprojectors.Projectors.PowerStatus switchOff(com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return blockingUnaryCall(
           getChannel(), getSwitchOffMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.jackgallaher.smartprojectors.Projectors.Response inputHDMI(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartprojectors.Projectors.Response inputHDMI(com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return blockingUnaryCall(
           getChannel(), getInputHDMIMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.jackgallaher.smartprojectors.Projectors.Response inputVGA(com.google.protobuf.Empty request) {
+    public com.jackgallaher.smartprojectors.Projectors.Response inputVGA(com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return blockingUnaryCall(
           getChannel(), getInputVGAMethod(), getCallOptions(), request);
     }
@@ -363,7 +363,7 @@ public final class smartProjectorsGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartprojectors.Projectors.PowerStatus> switchOn(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
     }
@@ -371,7 +371,7 @@ public final class smartProjectorsGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartprojectors.Projectors.PowerStatus> switchOff(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
     }
@@ -379,7 +379,7 @@ public final class smartProjectorsGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartprojectors.Projectors.Response> inputHDMI(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getInputHDMIMethod(), getCallOptions()), request);
     }
@@ -387,7 +387,7 @@ public final class smartProjectorsGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.jackgallaher.smartprojectors.Projectors.Response> inputVGA(
-        com.google.protobuf.Empty request) {
+        com.jackgallaher.smartprojectors.Projectors.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getInputVGAMethod(), getCallOptions()), request);
     }
@@ -416,19 +416,19 @@ public final class smartProjectorsGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SWITCH_ON:
-          serviceImpl.switchOn((com.google.protobuf.Empty) request,
+          serviceImpl.switchOn((com.jackgallaher.smartprojectors.Projectors.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.PowerStatus>) responseObserver);
           break;
         case METHODID_SWITCH_OFF:
-          serviceImpl.switchOff((com.google.protobuf.Empty) request,
+          serviceImpl.switchOff((com.jackgallaher.smartprojectors.Projectors.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.PowerStatus>) responseObserver);
           break;
         case METHODID_INPUT_HDMI:
-          serviceImpl.inputHDMI((com.google.protobuf.Empty) request,
+          serviceImpl.inputHDMI((com.jackgallaher.smartprojectors.Projectors.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.Response>) responseObserver);
           break;
         case METHODID_INPUT_VGA:
-          serviceImpl.inputVGA((com.google.protobuf.Empty) request,
+          serviceImpl.inputVGA((com.jackgallaher.smartprojectors.Projectors.Empty) request,
               (io.grpc.stub.StreamObserver<com.jackgallaher.smartprojectors.Projectors.Response>) responseObserver);
           break;
         default:
