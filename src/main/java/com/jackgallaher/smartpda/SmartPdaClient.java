@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import com.jackgallaher.jmdns.ServiceDescription;
 import com.jackgallaher.jmdns.ServiceObserver;
 import com.jackgallaher.jmdns.jmDNSServiceTracker;
+import com.jackgallaher.smartlaptop.SmartLaptopClient;
 import com.jackgallaher.smartpda.Empty;
 import com.jackgallaher.smartpda.SmartPdaClient;
 import com.jackgallaher.smartpda.PowerStatus;
@@ -73,29 +74,32 @@ public class SmartPdaClient implements ServiceObserver {
 		channel.shutdown().awaitTermination(3, TimeUnit.SECONDS);
 	}
 	
+	//client side for switching on pda
 	public static void switchOn() {
 		System.out.println("The Pda is turning on");
 		try {
 			Empty request = Empty.newBuilder().build();
 			PowerStatus power_status = blockstub.switchOn(request);
+			//error handling using try catch
 		} catch (RuntimeException e) {
 			logger.log(Level.WARNING, "RPC Failure", e);
 			return;
 		}
 	}
-	
+	//client side for switching off pda
 	public static void switchOff() {
 		System.out.println("The Pda is turning off");
 		try {
 			Empty request = Empty.newBuilder().build();
 			PowerStatus power_status = blockstub.switchOff(request);
+			//error handling using try catch
 		} catch (RuntimeException e) {
 			logger.log(Level.WARNING, "Rpc has failed", e);
 			return;
 		}
 	}
 	
-	
+	//client side for retrieving appointements. user requests date and gets backs either nothing today or an appointment
 	public static void getAppointments() {
 		
 		Date request = Date.newBuilder().setDate("23/06/20").build();
@@ -108,6 +112,7 @@ public class SmartPdaClient implements ServiceObserver {
 				
 				System.out.println(appointment);
 			}
+			//error handling using try catch
 		}catch (RuntimeException e) {
 			logger.log(Level.WARNING, "Rpc has failed", e);
 			return;
@@ -115,7 +120,7 @@ public class SmartPdaClient implements ServiceObserver {
 	}
 	
 	
-	public static void getToDoList() {
+/*	public static void getToDoList() {
 		Day request = Day.newBuilder().setDay("Monday").build();
 		Iterator<ToDoList> todolist;	
 		
@@ -130,9 +135,9 @@ public class SmartPdaClient implements ServiceObserver {
 			logger.log(Level.WARNING, "Rpc has failed", e);
 			return;
 		}
-	}
+	}*/
 	
-	
+	//client side for retrieving playable files. user requests type and gets backs the file and that file type
 	public static void getMP3AndMP4Files() {
 		Type request = Type.newBuilder().setType("mp3").build();
 		Type request1 = Type.newBuilder().setType("mp4").build();
@@ -146,6 +151,7 @@ public class SmartPdaClient implements ServiceObserver {
 				
 				System.out.println(playablefiles);
 			}
+			//error handling using try catch
 		}catch (RuntimeException e) {
 			logger.log(Level.WARNING, "Rpc has failed", e);
 			return;
@@ -159,6 +165,22 @@ public class SmartPdaClient implements ServiceObserver {
 	public void switchService(String name) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public static void main (String[] args) throws InterruptedException{
+		SmartPdaClient client = new SmartPdaClient();
+		
+		// client method for switching on PDA (for gui)
+		// Displayed in the terminal
+		client.switchOn();
+		
+		client.switchOff();
+		
+		client.getAppointments();
+		
+		client.getMP3AndMP4Files();
+		
+		//client.getToDoList();
 	}
 	
 	

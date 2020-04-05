@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import com.jackgallaher.jmdns.ServiceDescription;
 import com.jackgallaher.jmdns.ServiceObserver;
 import com.jackgallaher.jmdns.jmDNSServiceTracker;
+import com.jackgallaher.smartdevice.SmartDeviceClient;
 import com.jackgallaher.smartlaptop.Empty;
 import com.jackgallaher.smartlaptop.PowerStatus;
 import com.jackgallaher.smartlaptop.SmartLaptopClient;
@@ -77,9 +78,10 @@ public class SmartLaptopClient implements ServiceObserver{
 	}
 	
 	
-
+	//client side for switching on laptop
 	public static void switchOn() {
 		System.out.println("The Laptop is turning on");
+		//error handling using try catch
 		try {
 			Empty request = Empty.newBuilder().build();
 			Status power_status = blockstub.switchOn(request);
@@ -89,8 +91,10 @@ public class SmartLaptopClient implements ServiceObserver{
 		}
 	}
 	
+	//client side for switching off laptop
 	public static void switchOff() {
 		System.out.println("The Laptop is turning off");
+		//error handling using try catch
 		try {
 			Empty request = Empty.newBuilder().build();
 			Status power_status = blockstub.switchOff(request);
@@ -100,7 +104,7 @@ public class SmartLaptopClient implements ServiceObserver{
 		}
 	}
 	
-	
+	//client side for for charging the laptop
 	public static void startCharging() {
 		System.out.println("Laptop has started charging");
 		try {
@@ -117,12 +121,14 @@ public class SmartLaptopClient implements ServiceObserver{
 		
 		Empty request = Empty.newBuilder().build();
 		PowerStatus status = blockstub.laptopStatus(request);
+		//error handling using try catch
 	}catch (RuntimeException e) {
 		logger.log(Level.WARNING, "Rpc has Failed", e);
 		return;
 	}
 	}
 	
+	//client side for retrieving the status of the laptop
 	public static void laptopStatus() {
 		try {
 			Empty request = Empty.newBuilder().build();
@@ -136,6 +142,7 @@ public class SmartLaptopClient implements ServiceObserver{
 			System.out.println("The laptop is currently switch on: "+ statusMsg);
 			System.out.println("Battery Life: " +power_status.getBatterylife());
 			
+			//error handling using try catch
 		}	catch (RuntimeException e) {
 			logger.log(Level.WARNING, "Rpc has failed", e);
 			return;
@@ -148,6 +155,20 @@ public class SmartLaptopClient implements ServiceObserver{
 	public void switchService(String name) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public static void main (String[] args) throws InterruptedException{
+		SmartLaptopClient client = new SmartLaptopClient();
+		
+		// client method for switching on PDA (for gui)
+		// Displayed in the terminal
+		client.switchOn();
+		
+		client.switchOff();
+		
+		client.startCharging();
+		
+		client.laptopStatus();
 	}
 
 }

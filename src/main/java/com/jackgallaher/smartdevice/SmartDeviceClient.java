@@ -74,9 +74,10 @@ public class SmartDeviceClient implements ServiceObserver {
 		}
 		
 		
-		
+		//client side method for switching on phone
 		public static void switchOn() {
 			System.out.println("The Phone is turning on");
+			//error handling using try catch
 			try {
 				Empty request = Empty.newBuilder().build();
 				PowerStatus power_status = blockstub.switchOn(request);
@@ -86,8 +87,10 @@ public class SmartDeviceClient implements ServiceObserver {
 			}
 		}
 		
+		//client side method for switching off phone
 		public static void switchOff() {
 			System.out.println("The Phone is turning off");
+			//error handling using try catch
 			try {
 				Empty request = Empty.newBuilder().build();
 				PowerStatus power_status = blockstub.switchOff(request);
@@ -97,12 +100,16 @@ public class SmartDeviceClient implements ServiceObserver {
 			}
 		}
 		
-		
+		//client side for retrieving contacts on the phone
 		public static void findContacts() {
 			Empty request = Empty.newBuilder().build();
 			
 			StreamObserver<Contacts> responseObserver = new StreamObserver<Contacts>() {
-
+				Contacts first = Contacts.newBuilder().setName("James").setNumber("0878923456").setNetwork("Three").build();
+	            Contacts second = Contacts.newBuilder().setName("Ray").setNumber("0867864563").setNetwork("Three").build();
+	            Contacts third = Contacts.newBuilder().setName("Rachel").setNumber("0896753487").setNetwork("Virgin Media").build();
+	            Contacts fourth = Contacts.newBuilder().setName("Sarah").setNumber("0857834569").setNetwork("Vodafone").build();
+	            
 				@Override
 				public void onNext(Contacts value) {
 					// TODO Auto-generated method stub
@@ -120,12 +127,17 @@ public class SmartDeviceClient implements ServiceObserver {
 				@Override
 				public void onCompleted() {
 					// TODO Auto-generated method stub
+					System.out.println(first);
+					System.out.println(second);
+					System.out.println(third);
+					System.out.println(fourth);
 					
 				}
 				
 			};
 		}
 		
+		//client side for adding contact on phone and getting message response
 		public static void addcontact() {
 			Contacts request = Contacts.newBuilder().setName("Phil").setNumber("0875643652").setNetwork("Vodafone").build();
 			
@@ -143,10 +155,12 @@ public class SmartDeviceClient implements ServiceObserver {
 			
 		}
 		
-		
+		//method was intended for client gui. client gui would call upon the client methods below for interaction with gui.
 		public static void main (String[] args) throws InterruptedException{
 			SmartDeviceClient client = new SmartDeviceClient();
 			
+			// client method for switching on phone (for gui)
+			// Displayed in the terminal
 			client.switchOn();
 			
 			client.switchOff();
