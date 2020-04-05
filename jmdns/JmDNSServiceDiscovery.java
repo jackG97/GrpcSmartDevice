@@ -8,13 +8,13 @@ import javax.jmdns.ServiceEvent;
 import javax.jmdns.ServiceListener;
 
 
-public class jmDNSServiceTracker implements ServiceListener {
+public class JmDNSServiceDiscovery implements ServiceListener {
 
 	private JmDNS jmdns;
-	private static jmDNSServiceTracker instance;
+	private static JmDNSServiceDiscovery instance;
 	ServiceObserver observer;
 	
-	private jmDNSServiceTracker() {
+	private JmDNSServiceDiscovery() {
 		//error handling using try catch
 		try {
 			// Register a service
@@ -24,12 +24,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 		}
 	}
 	
-	public static jmDNSServiceTracker getInstance() {
-		if (instance == null) {
-			instance = new jmDNSServiceTracker();
-		}
-		return instance;
-	}
+	
 	
 	//
 	public void register(ServiceObserver observer) {
@@ -41,15 +36,7 @@ public class jmDNSServiceTracker implements ServiceListener {
 	}
 	
 	
-	public void end() {
-		//error handling using try catch
-		try {
-			jmdns.close();
-		} catch (IOException e) {
-			//getName method returns the name of this Logger instance
-			Logger.getLogger(jmDNSServiceTracker.class.getName()).log(Level.SEVERE, null, e);
-		}
-	}
+
 	
 	
 	@Override
@@ -77,8 +64,6 @@ public class jmDNSServiceTracker implements ServiceListener {
 		int port = event.getInfo().getPort();
 		String type = event.getInfo().getType();
 		
-		if (observer != null && observer.interested(type)) {
-			observer.serviceAdded(new ServiceDescription(address, port));
-		}
+		
 	}
 }

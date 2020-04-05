@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 import com.jackgallaher.jmdns.ServiceDescription;
 import com.jackgallaher.jmdns.ServiceObserver;
-import com.jackgallaher.jmdns.jmDNSServiceTracker;
+import com.jackgallaher.jmdns.JmDNSServiceDiscovery;
 import com.jackgallaher.smartdevice.SmartDeviceClient;
 import com.jackgallaher.smartlaptop.Empty;
 import com.jackgallaher.smartlaptop.PowerStatus;
@@ -33,7 +33,7 @@ public class SmartLaptopClient implements ServiceObserver{
     public SmartLaptopClient() {
     	serviceType = "_laptop._udp.local";
     	name = "Smart Laptop";
-    	jmDNSServiceTracker clientmanager = jmDNSServiceTracker.getInstance();
+    
     	
     	
     	serviceAdded(new ServiceDescription("localhost", 50051));

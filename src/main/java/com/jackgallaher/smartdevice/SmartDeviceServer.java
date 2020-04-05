@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jackgallaher.smartdevice.Empty;
-import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
+import com.jackgallaher.jmdns.JmDNSRegistrationService;
 import com.jackgallaher.smartdevice.smartPhoneGrpc.smartPhoneImplBase;
 
 
@@ -34,7 +34,7 @@ public class SmartDeviceServer  {
 		        .addService(new SmartPhoneImpl())
 		        .build()
 		        .start();
-		    JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartDevice", "_phone._udp.local.", "",port);
+		    JmDNSRegistrationService helper = new JmDNSRegistrationService("SmartDevice", "_phone._udp.local.", "",port);
 		    logger.info("Server started, listening on " + port);
 		    Runtime.getRuntime().addShutdownHook(new Thread() {	
 		    	

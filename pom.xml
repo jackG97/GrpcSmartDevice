@@ -6,6 +6,11 @@
   <name>grpcProject</name>
   
   <dependencies>
+  <dependency>
+		<groupId>com.sun.jersey</groupId>
+		<artifactId>jersey-client</artifactId>
+		<version>1.8</version>
+	</dependency>
 <dependency>
 <groupId>javax.jmdns</groupId>
 <artifactId>jmdns</artifactId>

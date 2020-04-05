@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import javax.print.attribute.standard.Media;
 
 import com.jackgallaher.smartpda.DayOrBuilder;
-import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
+import com.jackgallaher.jmdns.JmDNSRegistrationService;
 import com.jackgallaher.smartpda.PowerStatus;
 
 import com.jackgallaher.smartpda.smartPdaGrpc.smartPdaImplBase;
@@ -34,7 +34,7 @@ public class SmartPdaServer {
 				.addService(new SmartPdaImpl())
 				.build()
 				.start();
-		JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartPda", "_pda._udp.local", "",port);
+		JmDNSRegistrationService helper = new JmDNSRegistrationService("SmartPda", "_pda._udp.local", "",port);
 			    logger.info("Server started, listening on " + port);
 			    Runtime.getRuntime().addShutdownHook(new Thread(){
 			    	// Use stderr here because the logger may have been reset by the JVM shutdown hook

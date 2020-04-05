@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.jackgallaher.jmdns.jmDNSServiceTracker;
+import com.jackgallaher.jmdns.JmDNSServiceDiscovery;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -30,7 +30,7 @@ public class SmartDeviceClient implements ServiceObserver {
 	   public SmartDeviceClient() {
 		   serviceType = "_phone._udp.local.";
 		   name = "Smart Phone";
-		   jmDNSServiceTracker clientmanager = jmDNSServiceTracker.getInstance();
+		   
 		   
 		   serviceAdded(new ServiceDescription("localhost", 50051));
 		   

@@ -21,7 +21,7 @@ import com.jackgallaher.smartdevice.SmartDeviceServer;
 import com.jackgallaher.smartdevice.smartPhoneGrpc;
 import com.jackgallaher.smartlaptop.Status;
 import com.jackgallaher.smartlaptop.smartLaptopGrpc.smartLaptopImplBase;
-import com.jackgallaher.jmdns.JmDNSRegistrationHelper;
+import com.jackgallaher.jmdns.JmDNSRegistrationService;
 
 
 public class SmartLaptopServer {
@@ -38,7 +38,7 @@ public class SmartLaptopServer {
 		        .addService(new SmartLaptopImpl())
 		        .build()
 		        .start();
-		    JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("SmartLaptop", "_laptop._udp.local.", "",port);
+		    JmDNSRegistrationService helper = new JmDNSRegistrationService("SmartLaptop", "_laptop._udp.local.", "",port);
 		    logger.info("Server started, listening on " + port);
 		    Runtime.getRuntime().addShutdownHook(new Thread() {
 		    	// Use stderr here since the logger may have been reset by its JVM shutdown hook

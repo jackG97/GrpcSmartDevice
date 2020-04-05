@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 import com.jackgallaher.jmdns.ServiceDescription;
 import com.jackgallaher.jmdns.ServiceObserver;
-import com.jackgallaher.jmdns.jmDNSServiceTracker;
+import com.jackgallaher.jmdns.JmDNSServiceDiscovery;
 import com.jackgallaher.smartlaptop.SmartLaptopClient;
 import com.jackgallaher.smartpda.Empty;
 import com.jackgallaher.smartpda.SmartPdaClient;
@@ -34,7 +34,7 @@ public class SmartPdaClient implements ServiceObserver {
     public SmartPdaClient() {
     	serviceType = "_pda._udp.local";
     	name = "Smart Pda";
-    	jmDNSServiceTracker clientmanager = jmDNSServiceTracker.getInstance();
+    	
     	
     	serviceAdded(new ServiceDescription("localhost", 50051));
     }
