@@ -15,6 +15,8 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
+import java.util.Iterator;
+
 /**
  */
 @javax.annotation.Generated(
@@ -396,6 +398,11 @@ public final class smartPdaGrpc {
       return blockingServerStreamingCall(
           getChannel(), getGetMP3AndMP4FilesMethod(), getCallOptions(), request);
     }
+
+	public Iterator<ToDoList> getToDoList(Day request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
   }
 
   /**
